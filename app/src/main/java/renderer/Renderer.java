@@ -25,61 +25,63 @@ public class Renderer {
     }
 
     private void updateFrame() {
-        boolean isSortSprites = false;
         currentFrame = new BufferedImage((int) Window.Width(), (int) Window.Height(), BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g2d = currentFrame.createGraphics();
-        g2d.transform(Window.getCurrentScene().camera().getAffineTransform());
         
-        // check & update dirty sprites
-        for (SpriteRenderer spr : spriteRenderers) {
-            if (spr.isDirty()) {
-                BufferedImage imageTemp = spr.getDefaultSpriteImg();
-
-                if (spr.isRotated()) {
-                    imageTemp = GameUtils.RotateImage(imageTemp, spr.gameObject.transform.rotation);
+        if (!spriteRenderers.isEmpty()) {
+            boolean isSortSprites = false;
+            Graphics2D g2d = currentFrame.createGraphics();
+            g2d.transform(Window.getCurrentScene().camera().getAffineTransform());
+            
+            // check & update dirty sprites
+            for (SpriteRenderer spr : spriteRenderers) {
+                if (spr.isDirty()) {
+                    BufferedImage imageTemp = spr.getDefaultSpriteImg();
+    
+                    if (spr.isRotated()) {
+                        imageTemp = GameUtils.RotateImage(imageTemp, spr.gameObject.transform.rotation);
+                    }
+    
+                    if (spr.isYPosChanged()) {
+                        isSortSprites = true;
+                    }
+    
+                    // System.out.println((imageTemp != null) + " " + imageTemp.getWidth() + " " + imageTemp.getHeight());
+                    spr.setLastSpriteImg(imageTemp);
+                    spr.unflagDirty();
                 }
-
-                if (spr.isYPosChanged()) {
-                    isSortSprites = true;
+            }
+    
+            // sort order of sprites based on y-axis
+            if (isSortSprites) {
+                sortSprites();
+            }
+            
+            // create the image frame to be rendered
+            for (SpriteRenderer spr : spriteRenderers) {
+                BufferedImage imageTemp = spr.getLastSpriteImg();
+                Vector3f position = spr.gameObject.transform.position;
+                Vector2f scale = spr.gameObject.transform.scale;
+    
+                int width = (int) (imageTemp.getWidth() * scale.x * Window.Scale());
+                int height = (int) (imageTemp.getHeight() * scale.y * Window.Scale());
+                int x = (int) (position.x * Window.Scale());
+                int y = (int) -((position.z * Window.Scale()) + (position.y * Window.Scale()) + height);
+    
+                if (!spr.getColorVec().equals(DEFAULT_COLOR_VEC)) {
+                    imageTemp = GameUtils.SetImageColor(imageTemp, spr.getColorVec());
                 }
-
-                // System.out.println((imageTemp != null) + " " + imageTemp.getWidth() + " " + imageTemp.getHeight());
-                spr.setLastSpriteImg(imageTemp);
-                spr.unflagDirty();
+                g2d.drawImage(imageTemp, x, y, width, height, null);
             }
+    
+            g2d.dispose();
         }
-
-        // sort order of sprites based on y-axis
-        if (isSortSprites) {
-            sortSprites();
-        }
-        
-        // create the image frame to be rendered
-        for (SpriteRenderer spr : spriteRenderers) {
-            BufferedImage imageTemp = spr.getLastSpriteImg();
-            Vector3f position = spr.gameObject.transform.position;
-            Vector2f scale = spr.gameObject.transform.scale;
-
-            int width = (int) (imageTemp.getWidth() * scale.x * Window.Scale());
-            int height = (int) (imageTemp.getHeight() * scale.y * Window.Scale());
-            int x = (int) (position.x * Window.Scale());
-            int y = (int) -((position.z * Window.Scale()) + (position.y * Window.Scale()) + height);
-
-            if (!spr.getColorVec().equals(DEFAULT_COLOR_VEC)) {
-                imageTemp = GameUtils.SetImageColor(imageTemp, spr.getColorVec());
-            }
-            g2d.drawImage(imageTemp, x, y, width, height, null);
-        }
-
-        g2d.dispose();
     }
 
     public void render(Graphics2D g) {
-        if (!spriteRenderers.isEmpty()) {
-            updateFrame();
-        }
+        updateFrame();
+
         g.drawImage(currentFrame, 0, 0, Window.Width(), Window.Height(), null);
-        
+
         g.setColor(Color.RED);
         g.drawRect(Window.Width() / 2, Window.Height() / 2, 10, 10);
         g.drawRect(0, 0 / 2, 10, 10);
@@ -89,7 +91,6 @@ public class Renderer {
 
     private void sortSprites() {
         Collections.sort(spriteRenderers);
-        System.out.println("Sorting Sprites");
     }
 
     public void add(GameObject go) {
@@ -106,7 +107,10 @@ public class Renderer {
         for (int i = 0; i < spriteRenderers.size(); i++) {
             if (spriteRenderers.get(i) == spr) {
                 spriteRenderers.remove(i);
-                break;
+                sortSprites();
+
+                
+                return;
             }
         }
     }
@@ -117,6 +121,13 @@ public class Renderer {
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        }
+    }
+
+    public void printSprites() {
+        System.out.println("==================");
+        for (SpriteRenderer spprrr : spriteRenderers) {
+            System.out.println(spprrr);
         }
     }
 

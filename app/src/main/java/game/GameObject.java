@@ -102,9 +102,19 @@ public class GameObject {
         return this.isDead;
     }
 
+    public void setDead() {
+        isDead = true;
+    }
+
     public void generateUid() {
         this.uid = ID_COUNTER++;
     }
+
+    @Override
+    public String toString() {
+        return "GameObject: [name: '" + name + "', uid: '" + getUid() + "', components: '" + components.size() + "']";
+    }
+
 
     // public GameObject copy() {
     //     Gson gson = new GsonBuilder()

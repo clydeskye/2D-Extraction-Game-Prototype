@@ -24,7 +24,7 @@ public class Scene {
     private Renderer renderer;
     private Camera camera;
     private boolean isRunning;
-    private List<GameObject> gameObjects = new ArrayList<>();
+    private List<GameObject> gameObjects;
     private Physics2D physics2d;
     private SceneInitializer sceneInitializer;
 
@@ -50,6 +50,7 @@ public class Scene {
             this.physics2d.add(go);
         }
         isRunning = true;
+        printGameObjects();
     }
 
     public void addGameObjectToScene(GameObject go) {
@@ -101,6 +102,7 @@ public class Scene {
             go.update(dt);
 
             if(go.isDead()) {
+                System.out.println(go + " (DESTROYED)");
                 gameObjects.remove(i);
                 this.renderer.destroyGameObject(go);
                 this.physics2d.destroyGameObject(go);
@@ -189,5 +191,13 @@ public class Scene {
         for (GameObject go : gameObjects) {
             go.destroy();
         }
+    }
+
+    public void printGameObjects() {
+        System.out.println("==============================");
+        for (GameObject go : gameObjects) {
+            System.out.println(go);
+        }
+        System.out.println("==============================");
     }
 }

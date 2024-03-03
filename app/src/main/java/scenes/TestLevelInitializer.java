@@ -16,7 +16,15 @@ public class TestLevelInitializer extends SceneInitializer{
     @Override
     public void init(Scene scene) {
 
-        scene.addGameObjectToScene(Prefabs.generateDemoBlock(new Vector3f(0, 0 , 0)));
+        scene.addGameObjectToScene(Prefabs.generateDemoBlock(50f, 0f, 0f));
+        
+        GameObject block = Prefabs.generateDemoBlock(0, 0, 0);
+        DebugTimer timer = new DebugTimer();
+        timer.setCountdown(300);
+        block.addComponent(timer);
+        scene.addGameObjectToScene(block);
+        
+        scene.addGameObjectToScene(Prefabs.generateDemoBlock(-50f, 0f, 0f));
     }
 
     @Override

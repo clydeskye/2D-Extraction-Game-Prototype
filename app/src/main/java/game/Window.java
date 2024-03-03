@@ -25,8 +25,6 @@ public class Window extends JPanel implements Runnable {
 
     private static Scene currentScene;
 
-    // private Camera camera;
-
     public Window() {
         FPS_SET = 30;
         GameScale = 5.0f;
