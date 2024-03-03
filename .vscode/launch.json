@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Universal",
+            "request": "launch",
+            "mainClass": "game.Universal",
+            "projectName": "app"
+        },
+        {
+            "type": "java",
             "name": "main",
             "request": "launch",
             "mainClass": "main",

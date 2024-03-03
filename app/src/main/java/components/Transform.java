@@ -64,4 +64,12 @@ public class Transform extends Component {
         Transform t = (Transform)o;
         return t.scale.equals(this.scale);
     }
+
+    public boolean equalsYPos(Object o) {
+        if(o == null) return false;
+        if(!(o instanceof Transform)) return false;
+
+        Transform t = (Transform)o;
+        return t.position.y == this.position.y;
+    }
 }

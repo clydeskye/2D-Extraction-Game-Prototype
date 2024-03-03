@@ -20,8 +20,8 @@ import java.io.File;
 public class AssetPool {
 
     public static final String SPRITES_PARENT_FOLDER = "app/assets/sprites/";
-	public static final String GROUND_SPRITESHEET = "terrain/ground/Tiles.png";
-	public static final String DUNGEON_FLOOR = "terrain/ground/Dungeon_floor.png";
+	public static final String GROUND_SPRITESHEET = SPRITES_PARENT_FOLDER + "terrain/ground/Tiles.png";
+	public static final String DUNGEON_FLOOR =  SPRITES_PARENT_FOLDER + "terrain/ground/Dungeon_floor.png";
 
     // private static Map<String, Shader> shaders = new HashMap<>();
     private static Map<String, Texture> textures = new HashMap<>();
@@ -31,7 +31,7 @@ public class AssetPool {
 		BufferedImage img = null;
 
 		// InputStream is = AssetPool.class.getResourceAsStream(filename);
-        File file = new File(SPRITES_PARENT_FOLDER + filename);
+        File file = new File(filename);
 		try {
 			img = ImageIO.read(file);
 		} catch (IOException e) {
@@ -62,12 +62,12 @@ public class AssetPool {
     // }
 
     public static Texture getTexture(String resourceName) {
-        File file = new File(SPRITES_PARENT_FOLDER + resourceName);
+        File file = new File(resourceName);
         if(AssetPool.textures.containsKey(file.getAbsolutePath())) {
             return AssetPool.textures.get(file.getAbsolutePath());
         } else {
             Texture texture = new Texture();
-            texture.setFilepath(SPRITES_PARENT_FOLDER + resourceName);
+            texture.setFilepath(resourceName);
             AssetPool.textures.put(file.getAbsolutePath(), texture);
             return texture;
         }

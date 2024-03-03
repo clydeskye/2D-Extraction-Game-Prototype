@@ -5,13 +5,13 @@ import java.awt.image.BufferedImage;
 import org.joml.Vector4f;
 import renderer.Texture;
 
-public class SpriteRenderer extends Component {
+public class SpriteRenderer extends Component implements Comparable<SpriteRenderer>{
 
     private Sprite sprite;
     private Vector4f color = new Vector4f(1, 1, 1, 1);
     private transient Transform transform;
     private boolean isDirty = true;
-    private transient boolean rotationChanged = false, scaleChanged = false;
+    private transient boolean rotationChanged = false, scaleChanged = false, yPosChanged = false;
 
     @Override
     public void start() {
@@ -21,12 +21,17 @@ public class SpriteRenderer extends Component {
     @Override
     public void update(float dt) {
         if(!this.transform.equals(this.gameObject.transform)) {
-            isDirty = true;
             if (!this.transform.equalsRotation(this.gameObject.transform)) {
                 rotationChanged = true;
+                isDirty = true;
+            }
+            if (!this.transform.equalsYPos(this.gameObject.transform)) {
+                rotationChanged = true;
+                isDirty = true;
             }
             // if (!this.transform.equalsScale(this.gameObject.transform)) {
             //     scaleChanged = true;
+            //     isDirty = true;
             // }
             this.gameObject.transform.copy(this.transform);
         }
@@ -64,8 +69,6 @@ public class SpriteRenderer extends Component {
         return this.color;
     }
 
-    
-
     public boolean isDirty() {
         return this.isDirty;
     }
@@ -78,9 +81,19 @@ public class SpriteRenderer extends Component {
         return this.rotationChanged;
     }
 
+    public boolean isYPosChanged() {
+        return this.yPosChanged;
+    }
+
     public void unflagDirty() {
         this.isDirty = false;
         this.rotationChanged = false;
         this.scaleChanged = false;
+        this.yPosChanged = false;
+    }
+
+    @Override
+    public int compareTo(SpriteRenderer o) {
+        return (this.gameObject.transform.position.y < o.gameObject.transform.position.y) ? -1 : ((this.gameObject.transform.position.y == o.gameObject.transform.position.y) ? 0 : 1);
     }
 }

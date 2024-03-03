@@ -3,6 +3,7 @@ package renderer;
 import game.*;
 import components.*;
 import utils.*;
+import java.util.*;
 import javax.imageio.ImageIO;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
@@ -11,13 +12,11 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.awt.Color;
 
 public class Renderer {
 
     private final Vector4f DEFAULT_COLOR_VEC = new Vector4f(1f, 1f, 1f, 1f);
-
     private List<SpriteRenderer> spriteRenderers = new ArrayList<>();
     private BufferedImage currentFrame;
 
@@ -26,33 +25,50 @@ public class Renderer {
     }
 
     private void updateFrame() {
+        boolean isSortSprites = false;
         currentFrame = new BufferedImage((int) Window.Width(), (int) Window.Height(), BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2d = currentFrame.createGraphics();
         g2d.transform(Window.getCurrentScene().camera().getAffineTransform());
         
+        // check & update dirty sprites
         for (SpriteRenderer spr : spriteRenderers) {
-            BufferedImage imageTemp;
-            Vector3f position = spr.gameObject.transform.position;
-            Vector2f scale = spr.gameObject.transform.scale;
-
             if (spr.isDirty()) {
-                imageTemp = spr.getDefaultSpriteImg();
+                BufferedImage imageTemp = spr.getDefaultSpriteImg();
 
                 if (spr.isRotated()) {
                     imageTemp = GameUtils.RotateImage(imageTemp, spr.gameObject.transform.rotation);
                 }
 
+                if (spr.isYPosChanged()) {
+                    isSortSprites = true;
+                }
+
+                // System.out.println((imageTemp != null) + " " + imageTemp.getWidth() + " " + imageTemp.getHeight());
                 spr.setLastSpriteImg(imageTemp);
                 spr.unflagDirty();
-            } else {
-                imageTemp = spr.getLastSpriteImg();
             }
+        }
 
-            if (spr.getColorVec().equals(DEFAULT_COLOR_VEC)) {
+        // sort order of sprites based on y-axis
+        if (isSortSprites) {
+            sortSprites();
+        }
+        
+        // create the image frame to be rendered
+        for (SpriteRenderer spr : spriteRenderers) {
+            BufferedImage imageTemp = spr.getLastSpriteImg();
+            Vector3f position = spr.gameObject.transform.position;
+            Vector2f scale = spr.gameObject.transform.scale;
+
+            int width = (int) (imageTemp.getWidth() * scale.x * Window.Scale());
+            int height = (int) (imageTemp.getHeight() * scale.y * Window.Scale());
+            int x = (int) (position.x * Window.Scale());
+            int y = (int) -((position.z * Window.Scale()) + (position.y * Window.Scale()) + height);
+
+            if (!spr.getColorVec().equals(DEFAULT_COLOR_VEC)) {
                 imageTemp = GameUtils.SetImageColor(imageTemp, spr.getColorVec());
             }
-
-            g2d.drawImage(imageTemp, (int) (position.x * Window.Scale()), (int) (position.y * Window.Scale()), (int) (imageTemp.getWidth() * scale.x * Window.Scale()), (int) (imageTemp.getHeight() * scale.y * Window.Scale()), null);
+            g2d.drawImage(imageTemp, x, y, width, height, null);
         }
 
         g2d.dispose();
@@ -64,20 +80,35 @@ public class Renderer {
         }
         g.drawImage(currentFrame, 0, 0, Window.Width(), Window.Height(), null);
         
-        // g.setColor(Color.RED);
-        // g.drawRect(Window.Width() / 2, Window.Height() / 2, 10, 10);
-        // g.drawRect(0, 0 / 2, 10, 10);
-        // g.drawRect(Window.Width() / 4, Window.Height() / 4, 10, 10);
+        g.setColor(Color.RED);
+        g.drawRect(Window.Width() / 2, Window.Height() / 2, 10, 10);
+        g.drawRect(0, 0 / 2, 10, 10);
+        g.drawRect(Window.Width() / 4, Window.Height() / 4, 10, 10);
         // g.dispose();
     }
 
-    
-    public void destroyGameObject(GameObject go) {
-       
+    private void sortSprites() {
+        Collections.sort(spriteRenderers);
+        System.out.println("Sorting Sprites");
     }
 
     public void add(GameObject go) {
-        
+        SpriteRenderer spr = go.getComponent(SpriteRenderer.class);
+        if(spr != null) {
+            spriteRenderers.add(spr);
+            sortSprites();
+        }
+    }
+
+    public void destroyGameObject(GameObject go) {
+        if(go.getComponent(SpriteRenderer.class) == null) return;
+        SpriteRenderer spr = go.getComponent(SpriteRenderer.class);
+        for (int i = 0; i < spriteRenderers.size(); i++) {
+            if (spriteRenderers.get(i) == spr) {
+                spriteRenderers.remove(i);
+                break;
+            }
+        }
     }
 
     public void screenshotCurrentFrame() {
@@ -89,6 +120,28 @@ public class Renderer {
         }
     }
 
+    // private void add(SpriteRenderer sprite) {
+    //     boolean added = false;
+    //     for(RenderBatch batch : batches) {
+    //         if (batch.hasRoom() && batch.getZIndex() == sprite.gameObject.transform.zIndex) {
+    //             Texture tex = sprite.getTexture();
+    //             if(tex == null || (batch.hasTexture(tex) || batch.hasTextureRoom())) {
+    //                 batch.addSprite(sprite);
+    //                 added = true;
+    //                 break;
+    //             }
+    //         }
+    //     }
+
+    //     if(!added) {
+    //         RenderBatch newBatch = new RenderBatch(MAX_BATCH_SIZE, sprite.gameObject.transform.zIndex, this);
+    //         newBatch.start();
+    //         batches.add(newBatch);
+    //         newBatch.addSprite(sprite);
+    //         Collections.sort(batches);
+    //     }
+    // }
+    
     // //images
     // BufferedImage imgTmp, image, rotatedImage, combinedImage;
     
