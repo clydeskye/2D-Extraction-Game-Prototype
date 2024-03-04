@@ -6,7 +6,7 @@ import utils.AssetPool;
 public class Texture {
 
 	private String filepath;
-	private BufferedImage imgTexture;
+	private transient BufferedImage imgTexture;
 	private int width, height; //Pixel Unit
 	
 	public Texture() {
@@ -32,6 +32,11 @@ public class Texture {
 	}
 
 	public BufferedImage getImgTexture() {
+		if (imgTexture == null) {
+			this.imgTexture = AssetPool.GetSpriteAtlas(filepath);
+			this.width = imgTexture.getWidth();
+			this.height = imgTexture.getHeight();	
+		}
 		return imgTexture;
 	}
 

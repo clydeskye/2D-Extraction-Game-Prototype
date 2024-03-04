@@ -1,6 +1,8 @@
 package game;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import scenes.DeserializeLevelInitializer;
 import scenes.Scene;
 import scenes.SceneInitializer;
 import scenes.TestLevelInitializer;
@@ -33,6 +35,10 @@ public class Window extends JPanel implements Runnable {
         windowSize = new Dimension(WindowWidth, WindowHeight);
     }
 
+    private void initClasses() {
+        changeScene(new DeserializeLevelInitializer());
+    }
+
     private void update() {
         currentScene.update(0);
 
@@ -61,10 +67,6 @@ public class Window extends JPanel implements Runnable {
         initWindow();
         setFocusable(true);
         startLoop();
-    }
-
-    private void initClasses() {
-        changeScene(new TestLevelInitializer());
     }
 
     private void initWindow() {

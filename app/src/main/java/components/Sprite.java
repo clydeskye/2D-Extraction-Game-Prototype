@@ -8,7 +8,7 @@ public class Sprite {
 
     private Texture texture = null;
     private int width, height, x, y;
-    private BufferedImage lastSpriteImg;
+    private transient BufferedImage lastSpriteImg;
 
     public Texture getTexture() {
         return this.texture;

@@ -25,7 +25,7 @@ public class Transform extends Component {
         init(position, scale, rotation);
 
     }
-    
+
     public void init(Vector3f position, Vector2f scale, float rotation) {
         this.position = position;
         this.scale = scale;

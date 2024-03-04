@@ -50,10 +50,11 @@ public class Scene {
             this.physics2d.add(go);
         }
         isRunning = true;
-        printGameObjects();
     }
 
     public void addGameObjectToScene(GameObject go) {
+        System.out.println(go + " (ADDED TO SCENE)");
+
         if(!isRunning) {
             gameObjects.add(go);
         } else {
@@ -74,6 +75,9 @@ public class Scene {
         GameObject go = new GameObject(name);
         go.addComponent(new Transform());
         go.transform = go.getComponent(Transform.class);
+
+        System.out.println(go + " (CREATED)");
+
         return go;
     }
 

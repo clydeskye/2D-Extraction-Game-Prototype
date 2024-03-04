@@ -12,10 +12,10 @@ public class GameObject {
     private static int ID_COUNTER = 0;
     private int uid = -1;
     public String name;
-    private List<Component> components;
     public transient Transform transform;
     private boolean doSerialization = true;
     private boolean isDead = false;
+    private List<Component> components;
 
     public GameObject(String name) {
         this.name = name;
@@ -112,27 +112,26 @@ public class GameObject {
 
     @Override
     public String toString() {
-        return "GameObject: [name: '" + name + "', uid: '" + getUid() + "', components: '" + components.size() + "']";
+        return "'" + getUid() + " " + name + "': [uid: '" + getUid() + "', components: '" + components.size() + "']";
     }
 
+    public GameObject copy() {
+        Gson gson = new GsonBuilder()
+            .registerTypeAdapter(Component.class, new ComponentDeserializer())
+            .registerTypeAdapter(GameObject.class, new GameObjectDeserializer())
+            .create();
 
-    // public GameObject copy() {
-    //     Gson gson = new GsonBuilder()
-    //         .registerTypeAdapter(Component.class, new ComponentDeserializer())
-    //         .registerTypeAdapter(GameObject.class, new GameObjectDeserializer())
-    //         .create();
+        String objAsJson = gson.toJson(this);
+        GameObject obj = gson.fromJson(objAsJson, GameObject.class);
+        obj.generateUid();
 
-    //     String objAsJson = gson.toJson(this);
-    //     GameObject obj = gson.fromJson(objAsJson, GameObject.class);
-    //     obj.generateUid();
-
-    //     for (Component c : obj.getAllComponenets()) {
-    //         c.generateId();
-    //     }
-    //     SpriteRenderer sprite = obj.getComponent(SpriteRenderer.class);
-    //     if (sprite != null && sprite.getTexture() != null) {
-    //         sprite.setSprite(AssetPool.getTexture(sprite.getTexture().getFilepath()));
-    //     }
-    //     return obj;
-    // }
+        for (Component c : obj.getAllComponenets()) {
+            c.generateId();
+        }
+        SpriteRenderer sprite = obj.getComponent(SpriteRenderer.class);
+        if (sprite != null && sprite.getTexture() != null) {
+            sprite.getSprite().setTexture(AssetPool.getTexture(sprite.getTexture().getFilepath()));
+        }
+        return obj;
+    }
 }

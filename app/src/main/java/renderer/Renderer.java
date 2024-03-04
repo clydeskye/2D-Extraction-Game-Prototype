@@ -72,7 +72,7 @@ public class Renderer {
                 }
                 g2d.drawImage(imageTemp, x, y, width, height, null);
             }
-    
+     
             g2d.dispose();
         }
     }

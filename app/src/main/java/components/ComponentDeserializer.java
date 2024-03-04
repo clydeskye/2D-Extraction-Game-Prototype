@@ -32,7 +32,4 @@ public class ComponentDeserializer implements JsonSerializer<Component>, JsonDes
         result.add("properties", context.serialize(src, src.getClass()));
         return result;
     }
-
-
-    
 }

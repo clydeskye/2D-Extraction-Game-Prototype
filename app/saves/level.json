@@ -1,0 +1,58 @@
+[
+  {
+    "uid": 0,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 0.8,
+            "y": 0.8
+          },
+          "rotation": 0.0,
+          "uid": 0
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor.png",
+              "width": 48,
+              "height": 48
+            },
+            "width": 16,
+            "height": 16,
+            "x": 0,
+            "y": 0
+          },
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "uid": 1
+        }
+      },
+      {
+        "type": "components.DebugTimer",
+        "properties": {
+          "timer": 300,
+          "maxTime": 300,
+          "uid": 2
+        }
+      }
+    ]
+  }
+]
