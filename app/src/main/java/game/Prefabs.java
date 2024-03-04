@@ -6,10 +6,10 @@ import utils.AssetPool;
 
 public class Prefabs {
     
-    public static GameObject generateDemoBlock(float x, float y, float z) {
+    public static GameObject generateDemoBlock(float x, float y, float z, int spriteIndex) {
         // Create required components
-        Sprite sprite = new Sprite();
-        sprite.setTexture(AssetPool.getTexture(AssetPool.DUNGEON_FLOOR), 0, 0, 16, 16);
+
+        Sprite sprite = AssetPool.getSpritesheet(AssetPool.DUNGEON_FLOOR_SPRITESHEET).getSprite(spriteIndex);
         
         SpriteRenderer spriteRenderer = new SpriteRenderer();
         spriteRenderer.setSprite(sprite);

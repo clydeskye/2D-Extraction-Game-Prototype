@@ -26,14 +26,14 @@
         "properties": {
           "sprite": {
             "texture": {
-              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor.png",
-              "width": 48,
-              "height": 48
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
             },
             "width": 16,
             "height": 16,
-            "x": 0,
-            "y": 0
+            "x": 16,
+            "y": 144
           },
           "color": {
             "x": 1.0,
@@ -51,6 +51,102 @@
           "timer": 300,
           "maxTime": 300,
           "uid": 2
+        }
+      }
+    ]
+  },
+  {
+    "uid": 1,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 16.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 0.8,
+            "y": 0.8
+          },
+          "rotation": 0.0,
+          "uid": 3
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 32,
+            "y": 144
+          },
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "uid": 4
+        }
+      }
+    ]
+  },
+  {
+    "uid": 2,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 32.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 0.8,
+            "y": 0.8
+          },
+          "rotation": 0.0,
+          "uid": 5
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 48,
+            "y": 144
+          },
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "uid": 6
         }
       }
     ]

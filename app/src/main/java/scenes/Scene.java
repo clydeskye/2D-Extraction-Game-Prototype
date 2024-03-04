@@ -76,8 +76,6 @@ public class Scene {
         go.addComponent(new Transform());
         go.transform = go.getComponent(Transform.class);
 
-        System.out.println(go + " (CREATED)");
-
         return go;
     }
 

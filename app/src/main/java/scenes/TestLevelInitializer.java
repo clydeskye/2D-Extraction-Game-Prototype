@@ -16,16 +16,19 @@ public class TestLevelInitializer extends SceneInitializer{
     @Override
     public void init(Scene scene) {
 
-        // scene.addGameObjectToScene(Prefabs.generateDemoBlock(50f, 0f, 0f));
         
-        GameObject block = Prefabs.generateDemoBlock(0, 0, 0);
+        GameObject block = Prefabs.generateDemoBlock(0, 0, 0, 55);
         DebugTimer timer = new DebugTimer();
         timer.setCountdown(300);
         block.addComponent(timer);
+        
+        GameObject block2 = Prefabs.generateDemoBlock(16, 0, 0, 56);
+        GameObject block3 = Prefabs.generateDemoBlock(32, 0, 0, 57);
+        
+        
         scene.addGameObjectToScene(block);
-
-        // scene.addGameObjectToScene(Prefabs.generateDemoBlock(-50f, 0f, 0f));
-
+        scene.addGameObjectToScene(block2);
+        scene.addGameObjectToScene(block3);
 
         scene.save();
     }
@@ -34,6 +37,11 @@ public class TestLevelInitializer extends SceneInitializer{
     public void loadResources(Scene scene) {
 
         AssetPool.getTexture(AssetPool.DUNGEON_FLOOR);
+        AssetPool.getTexture(AssetPool.TILES);
+        AssetPool.getTexture(AssetPool.DUNGEON_FLOOR_SPRITESHEET);
+
+        Spritesheet floorTiles = new Spritesheet(AssetPool.getTexture(AssetPool.DUNGEON_FLOOR_SPRITESHEET), 16, 16, 58);
+        AssetPool.addSpritesheet(AssetPool.DUNGEON_FLOOR_SPRITESHEET, floorTiles);
 
     }
 

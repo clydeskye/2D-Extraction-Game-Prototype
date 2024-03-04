@@ -6,8 +6,8 @@ import utils.AssetPool;
 public class Texture {
 
 	private String filepath;
-	private transient BufferedImage imgTexture;
 	private int width, height; //Pixel Unit
+	private transient BufferedImage imgTexture;
 	
 	public Texture() {
 		this.filepath = "Generated";

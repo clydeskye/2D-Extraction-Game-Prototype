@@ -7,6 +7,8 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Arrays;
 import javax.imageio.ImageIO;
+
+import components.Spritesheet;
 // import renderer.Shader;
 import renderer.Texture;
 
@@ -20,12 +22,14 @@ import java.io.File;
 public class AssetPool {
 
     public static final String SPRITES_PARENT_FOLDER = "app/assets/sprites/";
-	public static final String GROUND_SPRITESHEET = SPRITES_PARENT_FOLDER + "terrain/ground/Tiles.png";
+
+	public static final String TILES = SPRITES_PARENT_FOLDER + "terrain/ground/Tiles.png";
 	public static final String DUNGEON_FLOOR =  SPRITES_PARENT_FOLDER + "terrain/ground/Dungeon_floor.png";
+	public static final String DUNGEON_FLOOR_SPRITESHEET =  SPRITES_PARENT_FOLDER + "terrain/ground/Dungeon_floor_sprites.png";
 
     // private static Map<String, Shader> shaders = new HashMap<>();
     private static Map<String, Texture> textures = new HashMap<>();
-    // private static Map<String, Spritesheet> spritesheets = new HashMap<>();
+    private static Map<String, Spritesheet> spritesheets = new HashMap<>();
 
     public static BufferedImage GetSpriteAtlas(String filename) {
 		BufferedImage img = null;
@@ -73,20 +77,20 @@ public class AssetPool {
         }
     }
 
-    // public static void addSpritesheet(String resourceName, Spritesheet spritesheet) {
-    //     File file = new File(resourceName);
-    //     if(!AssetPool.spritesheets.containsKey(file.getAbsolutePath())) {
-    //         AssetPool.spritesheets.put(file.getAbsolutePath(), spritesheet);
-    //     }
-    // }
+    public static void addSpritesheet(String resourceName, Spritesheet spritesheet) {
+        File file = new File(resourceName);
+        if(!AssetPool.spritesheets.containsKey(file.getAbsolutePath())) {
+            AssetPool.spritesheets.put(file.getAbsolutePath(), spritesheet);
+        }
+    }
 
-    // public static Spritesheet getSpritesheet(String resourceName) {
-    //     File file = new File(resourceName);
-    //     if(!AssetPool.spritesheets.containsKey(file.getAbsolutePath())) {
-    //         assert false : "Error: Tried to acces '" + resourceName + "' and it has not been added tp asset pool.";
-    //     }
-    //     return AssetPool.spritesheets.getOrDefault(file.getAbsolutePath(), null);
-    // }
+    public static Spritesheet getSpritesheet(String resourceName) {
+        File file = new File(resourceName);
+        if(!AssetPool.spritesheets.containsKey(file.getAbsolutePath())) {
+            assert false : "Error: Tried to acces '" + resourceName + "' and it has not been added tp asset pool.";
+        }
+        return AssetPool.spritesheets.getOrDefault(file.getAbsolutePath(), null);
+    }
 }
 
 

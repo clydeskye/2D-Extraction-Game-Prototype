@@ -27,7 +27,7 @@ public class Sprite {
     }
 
     public BufferedImage getSpriteImg() {
-        return this.texture.getImgTexture().getSubimage(y, x, width, height);
+        return this.texture.getImgTexture().getSubimage(x, y, width, height);
     }
 
     public void setLastSpriteImg(BufferedImage image) {

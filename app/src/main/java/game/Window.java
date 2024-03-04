@@ -36,7 +36,7 @@ public class Window extends JPanel implements Runnable {
     }
 
     private void initClasses() {
-        changeScene(new DeserializeLevelInitializer());
+        changeScene(new TestLevelInitializer());
     }
 
     private void update() {
