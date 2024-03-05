@@ -13,6 +13,7 @@ import org.joml.Vector2f;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
 
 import components.*;
 import game.*;
@@ -96,7 +97,7 @@ public class Scene {
     }
 
     public void update(float dt) {
-        this.camera.update();;
+        this.camera.update();
         this.physics2d.update(dt);
 
         for(int i = 0; i < gameObjects.size(); i++) {
@@ -111,6 +112,12 @@ public class Scene {
                 i--;
             }
         }
+
+        if (KeyInputListener.isKeyPressed(KeyEvent.VK_ENTER)) {
+            screenshotCurrentFrame();
+            System.out.println("Screenshot taken.");
+        }
+
     }
 
     public void render(Graphics2D g) {
@@ -119,6 +126,10 @@ public class Scene {
 
     public Camera camera() {
         return this.camera;
+    }
+
+    public void screenshotCurrentFrame() {
+        this.renderer.screenshotCurrentFrame();
     }
 
     // public void imgui() {

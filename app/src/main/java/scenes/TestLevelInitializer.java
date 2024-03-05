@@ -17,18 +17,20 @@ public class TestLevelInitializer extends SceneInitializer{
     public void init(Scene scene) {
 
         
-        GameObject block = Prefabs.generateDemoBlock(0, 0, 0, 55);
+        GameObject block = Prefabs.generateDemoBlock(0, 0, 0, 56);
         DebugTimer timer = new DebugTimer();
         timer.setCountdown(300);
         block.addComponent(timer);
         
-        GameObject block2 = Prefabs.generateDemoBlock(16, 0, 0, 56);
-        GameObject block3 = Prefabs.generateDemoBlock(32, 0, 0, 57);
-        
+        GameObject block2 = Prefabs.generateDemoBlock(16, 0, 0, 57);
+        GameObject block3 = Prefabs.generateDemoBlock(32, 0, 0, 58);
+        GameObject block4 = Prefabs.generateDemoBlock(48, 0, 0, 59);
+
         
         scene.addGameObjectToScene(block);
         scene.addGameObjectToScene(block2);
         scene.addGameObjectToScene(block3);
+        scene.addGameObjectToScene(block4);
 
         scene.save();
     }

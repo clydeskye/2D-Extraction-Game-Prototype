@@ -7,10 +7,10 @@ import renderer.Texture;
 
 public class SpriteRenderer extends Component implements Comparable<SpriteRenderer>{
 
-    private Sprite sprite;
     private Vector4f color = new Vector4f(1, 1, 1, 1);
-    private transient Transform transform;
     private boolean isDirty = true;
+    private Sprite sprite;
+    private transient Transform transform;
     private transient boolean rotationChanged = false, scaleChanged = false, yPosChanged = false;
 
     @Override
