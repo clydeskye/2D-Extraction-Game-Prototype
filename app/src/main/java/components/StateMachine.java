@@ -44,6 +44,22 @@ public class StateMachine extends Component{
     private transient AnimationState currentState = null;
     private String defaultStateTitle = "";
 
+    public void setDefaultState(String animationTitle) {
+        for (AnimationState state : states) {
+            if (state.title.equals(animationTitle)) {
+                defaultStateTitle = animationTitle;
+                if (currentState == null) {
+                    currentState = state;
+                    return;
+                }
+            }
+        }
+    }
+
+    public void setDefaultState(AnimationState state) {
+        setDefaultState(state.title);
+    }
+
     public void addState(AnimationState state) {
         this.states.add(state);
     }

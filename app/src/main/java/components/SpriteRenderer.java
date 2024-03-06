@@ -58,6 +58,8 @@ public class SpriteRenderer extends Component implements Comparable<SpriteRender
     }
 
     public void setSprite(Sprite sprite) {
+        this.isDirty = true;
+        this.rotationChanged = true;
         this.sprite = sprite;
     }
 

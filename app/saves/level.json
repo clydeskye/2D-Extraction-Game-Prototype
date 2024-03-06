@@ -1,7 +1,7 @@
 [
   {
     "uid": 0,
-    "name": "Debug Block",
+    "name": "Knight",
     "doSerialization": true,
     "isDead": false,
     "components": [
@@ -9,13 +9,13 @@
         "type": "components.Transform",
         "properties": {
           "position": {
-            "x": 0.0,
+            "x": -40.0,
             "y": 0.0,
             "z": 0.0
           },
           "scale": {
-            "x": 0.8,
-            "y": 0.8
+            "x": 1.0,
+            "y": 1.0
           },
           "rotation": 0.0,
           "uid": 0
@@ -33,23 +33,87 @@
           "isDirty": true,
           "sprite": {
             "texture": {
-              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
-              "width": 96,
-              "height": 160
+              "filepath": "app/assets/sprites/entities/knight/Idle-Sheet.png",
+              "width": 128,
+              "height": 32
             },
-            "width": 16,
-            "height": 16,
-            "x": 32,
-            "y": 144
+            "width": 32,
+            "height": 32,
+            "x": 0,
+            "y": 0
           },
           "uid": 1
         }
       },
       {
-        "type": "components.DebugTimer",
+        "type": "components.StateMachine",
         "properties": {
-          "timer": 300,
-          "maxTime": 300,
+          "stateTransfers": {},
+          "states": [
+            {
+              "title": "Idle",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/knight/Idle-Sheet.png",
+                      "width": 128,
+                      "height": 32
+                    },
+                    "width": 32,
+                    "height": 32,
+                    "x": 0,
+                    "y": 0
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/knight/Idle-Sheet.png",
+                      "width": 128,
+                      "height": 32
+                    },
+                    "width": 32,
+                    "height": 32,
+                    "x": 32,
+                    "y": 0
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/knight/Idle-Sheet.png",
+                      "width": 128,
+                      "height": 32
+                    },
+                    "width": 32,
+                    "height": 32,
+                    "x": 64,
+                    "y": 0
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/knight/Idle-Sheet.png",
+                      "width": 128,
+                      "height": 32
+                    },
+                    "width": 32,
+                    "height": 32,
+                    "x": 96,
+                    "y": 0
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            }
+          ],
+          "defaultStateTitle": "Idle",
           "uid": 2
         }
       }
@@ -57,7 +121,7 @@
   },
   {
     "uid": 1,
-    "name": "Debug Block",
+    "name": "Wizzard",
     "doSerialization": true,
     "isDead": false,
     "components": [
@@ -65,13 +129,13 @@
         "type": "components.Transform",
         "properties": {
           "position": {
-            "x": 16.0,
+            "x": 0.0,
             "y": 0.0,
             "z": 0.0
           },
           "scale": {
-            "x": 0.8,
-            "y": 0.8
+            "x": 1.0,
+            "y": 1.0
           },
           "rotation": 0.0,
           "uid": 3
@@ -89,23 +153,95 @@
           "isDirty": true,
           "sprite": {
             "texture": {
-              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
-              "width": 96,
-              "height": 160
+              "filepath": "app/assets/sprites/entities/wizzard/Idle-Sheet.png",
+              "width": 128,
+              "height": 32
             },
-            "width": 16,
-            "height": 16,
-            "x": 48,
-            "y": 144
+            "width": 32,
+            "height": 32,
+            "x": 0,
+            "y": 0
           },
           "uid": 4
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": {},
+          "states": [
+            {
+              "title": "Idle",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/wizzard/Idle-Sheet.png",
+                      "width": 128,
+                      "height": 32
+                    },
+                    "width": 32,
+                    "height": 32,
+                    "x": 0,
+                    "y": 0
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/wizzard/Idle-Sheet.png",
+                      "width": 128,
+                      "height": 32
+                    },
+                    "width": 32,
+                    "height": 32,
+                    "x": 32,
+                    "y": 0
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/wizzard/Idle-Sheet.png",
+                      "width": 128,
+                      "height": 32
+                    },
+                    "width": 32,
+                    "height": 32,
+                    "x": 64,
+                    "y": 0
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/wizzard/Idle-Sheet.png",
+                      "width": 128,
+                      "height": 32
+                    },
+                    "width": 32,
+                    "height": 32,
+                    "x": 96,
+                    "y": 0
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            }
+          ],
+          "defaultStateTitle": "Idle",
+          "uid": 5
         }
       }
     ]
   },
   {
     "uid": 2,
-    "name": "Debug Block",
+    "name": "Rogue",
     "doSerialization": true,
     "isDead": false,
     "components": [
@@ -113,16 +249,16 @@
         "type": "components.Transform",
         "properties": {
           "position": {
-            "x": 32.0,
+            "x": 40.0,
             "y": 0.0,
             "z": 0.0
           },
           "scale": {
-            "x": 0.8,
-            "y": 0.8
+            "x": 1.0,
+            "y": 1.0
           },
           "rotation": 0.0,
-          "uid": 5
+          "uid": 6
         }
       },
       {
@@ -137,63 +273,87 @@
           "isDirty": true,
           "sprite": {
             "texture": {
-              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
-              "width": 96,
-              "height": 160
+              "filepath": "app/assets/sprites/entities/rogue/Idle-Sheet.png",
+              "width": 128,
+              "height": 32
             },
-            "width": 16,
-            "height": 16,
+            "width": 32,
+            "height": 32,
             "x": 0,
             "y": 0
           },
-          "uid": 6
-        }
-      }
-    ]
-  },
-  {
-    "uid": 3,
-    "name": "Debug Block",
-    "doSerialization": true,
-    "isDead": false,
-    "components": [
-      {
-        "type": "components.Transform",
-        "properties": {
-          "position": {
-            "x": 48.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "scale": {
-            "x": 0.8,
-            "y": 0.8
-          },
-          "rotation": 0.0,
           "uid": 7
         }
       },
       {
-        "type": "components.SpriteRenderer",
+        "type": "components.StateMachine",
         "properties": {
-          "color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "isDirty": true,
-          "sprite": {
-            "texture": {
-              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
-              "width": 96,
-              "height": 160
-            },
-            "width": 16,
-            "height": 16,
-            "x": 16,
-            "y": 0
-          },
+          "stateTransfers": {},
+          "states": [
+            {
+              "title": "Idle",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/rogue/Idle-Sheet.png",
+                      "width": 128,
+                      "height": 32
+                    },
+                    "width": 32,
+                    "height": 32,
+                    "x": 0,
+                    "y": 0
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/rogue/Idle-Sheet.png",
+                      "width": 128,
+                      "height": 32
+                    },
+                    "width": 32,
+                    "height": 32,
+                    "x": 32,
+                    "y": 0
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/rogue/Idle-Sheet.png",
+                      "width": 128,
+                      "height": 32
+                    },
+                    "width": 32,
+                    "height": 32,
+                    "x": 64,
+                    "y": 0
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/rogue/Idle-Sheet.png",
+                      "width": 128,
+                      "height": 32
+                    },
+                    "width": 32,
+                    "height": 32,
+                    "x": 96,
+                    "y": 0
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "doesLoop": true
+            }
+          ],
+          "defaultStateTitle": "Idle",
           "uid": 8
         }
       }

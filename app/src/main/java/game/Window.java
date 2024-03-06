@@ -39,8 +39,8 @@ public class Window extends JPanel implements Runnable {
         changeScene(new TestLevelInitializer());
     }
 
-    private void update() {
-        currentScene.update(0);
+    private void update(float dt) {
+        currentScene.update(dt);
 
     }
 
@@ -121,6 +121,8 @@ public class Window extends JPanel implements Runnable {
         return Window.window;
     }
 
+    float dt = 1f / UPS_SET;
+
     @Override
     public void run() {
         double timePerFrame = 1000000000.0 / FPS_SET, timePerUpdate = 1000000000.0 / UPS_SET, deltaU = 0, deltaF = 0;
@@ -132,7 +134,7 @@ public class Window extends JPanel implements Runnable {
             deltaF += (currentTime - previousTime) / timePerFrame;
             previousTime = currentTime;
             if(deltaU >= 1) {
-                update();
+                update(dt);
                 updates++;
                 deltaU--;
             }

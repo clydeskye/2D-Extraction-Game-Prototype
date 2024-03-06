@@ -26,6 +26,10 @@ public class AssetPool {
 	public static final String TILES = SPRITES_PARENT_FOLDER + "terrain/ground/Tiles.png";
 	public static final String DUNGEON_FLOOR =  SPRITES_PARENT_FOLDER + "terrain/ground/Dungeon_floor.png";
 	public static final String DUNGEON_FLOOR_SPRITESHEET =  SPRITES_PARENT_FOLDER + "terrain/ground/Dungeon_floor_sprites.png";
+    public static final String KNIGHT_IDLE = SPRITES_PARENT_FOLDER + "entities/knight/Idle-Sheet.png";
+    public static final String WIZZARD_IDLE = SPRITES_PARENT_FOLDER + "entities/wizzard/Idle-Sheet.png";
+    public static final String ROGUE_IDLE = SPRITES_PARENT_FOLDER + "entities/rogue/Idle-Sheet.png";
+
 
     // private static Map<String, Shader> shaders = new HashMap<>();
     private static Map<String, Texture> textures = new HashMap<>();
