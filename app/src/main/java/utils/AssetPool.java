@@ -6,9 +6,12 @@ import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.Collection;
+
 import javax.imageio.ImageIO;
 
 import components.Spritesheet;
+import game.Sound;
 // import renderer.Shader;
 import renderer.Texture;
 
@@ -21,19 +24,10 @@ import java.io.File;
 
 public class AssetPool {
 
-    public static final String SPRITES_PARENT_FOLDER = "app/assets/sprites/";
-
-	public static final String TILES = SPRITES_PARENT_FOLDER + "terrain/ground/Tiles.png";
-	public static final String DUNGEON_FLOOR =  SPRITES_PARENT_FOLDER + "terrain/ground/Dungeon_floor.png";
-	public static final String DUNGEON_FLOOR_SPRITESHEET =  SPRITES_PARENT_FOLDER + "terrain/ground/Dungeon_floor_sprites.png";
-    public static final String KNIGHT_IDLE = SPRITES_PARENT_FOLDER + "entities/knight/Idle-Sheet.png";
-    public static final String WIZZARD_IDLE = SPRITES_PARENT_FOLDER + "entities/wizzard/Idle-Sheet.png";
-    public static final String ROGUE_IDLE = SPRITES_PARENT_FOLDER + "entities/rogue/Idle-Sheet.png";
-
-
     // private static Map<String, Shader> shaders = new HashMap<>();
     private static Map<String, Texture> textures = new HashMap<>();
     private static Map<String, Spritesheet> spritesheets = new HashMap<>();
+    private static Map<String, Sound> sounds = new HashMap<>();
 
     public static BufferedImage GetSpriteAtlas(String filename) {
 		BufferedImage img = null;
@@ -94,6 +88,31 @@ public class AssetPool {
             assert false : "Error: Tried to acces '" + resourceName + "' and it has not been added tp asset pool.";
         }
         return AssetPool.spritesheets.getOrDefault(file.getAbsolutePath(), null);
+    }
+
+    public static Collection<Sound> getAllSounds() {
+        return sounds.values();
+    }
+
+    public static Sound getSound(String soundFile) {
+        File file = new File(soundFile);
+        if (sounds.containsKey(file.getAbsolutePath())) {
+            return sounds.get(file.getAbsolutePath());
+        } else {
+            assert false : "Sound file not added '" + soundFile + "'";
+        }
+        return null;
+    }
+
+    public static Sound addSound(String soundFile, boolean loops) {
+        File file = new File(soundFile);
+        if (sounds.containsKey(file.getAbsolutePath())) {
+            return sounds.get(file.getAbsolutePath());
+        } else {
+            Sound sound = new Sound(file.getAbsolutePath(), loops);
+            AssetPool.sounds.put(file.getAbsolutePath(), sound);
+            return sound;
+        }
     }
 }
 

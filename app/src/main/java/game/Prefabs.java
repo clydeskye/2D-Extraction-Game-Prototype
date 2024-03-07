@@ -3,13 +3,14 @@ package game;
 import org.joml.*;
 import components.*;
 import utils.AssetPool;
+import utils.Const;
 
 public class Prefabs {
     
     public static GameObject generateDemoBlock(float x, float y, float z, int spriteIndex) {
         // Create required components
 
-        Sprite sprite = AssetPool.getSpritesheet(AssetPool.DUNGEON_FLOOR_SPRITESHEET).getSprite(spriteIndex);
+        Sprite sprite = AssetPool.getSpritesheet(Const.Img.DUNGEON_FLOOR_SPRITESHEET).getSprite(spriteIndex);
         
         SpriteRenderer spriteRenderer = new SpriteRenderer();
         spriteRenderer.setSprite(sprite);
@@ -29,22 +30,22 @@ public class Prefabs {
         
         switch (type) {
             case 0:
-                spritesheet = AssetPool.getSpritesheet(AssetPool.KNIGHT_IDLE);
+                spritesheet = AssetPool.getSpritesheet(Const.Img.KNIGHT_IDLE);
                 hero = generateSpriteObjectDemo(spritesheet.getSprite(0), x, y, 1f, 1f);
                 hero.name = "Knight";
                 break;
             case 1:
-                spritesheet = AssetPool.getSpritesheet(AssetPool.WIZZARD_IDLE);
+                spritesheet = AssetPool.getSpritesheet(Const.Img.WIZZARD_IDLE);
                 hero = generateSpriteObjectDemo(spritesheet.getSprite(0), x, y, 1f, 1f);
                 hero.name = "Wizzard";
                 break;
             case 2:
-                spritesheet = AssetPool.getSpritesheet(AssetPool.ROGUE_IDLE);
+                spritesheet = AssetPool.getSpritesheet(Const.Img.ROGUE_IDLE);
                 hero = generateSpriteObjectDemo(spritesheet.getSprite(0), x, y, 1f, 1f);
                 hero.name = "Rogue";
                 break;
             default:
-                spritesheet = AssetPool.getSpritesheet(AssetPool.KNIGHT_IDLE);
+                spritesheet = AssetPool.getSpritesheet(Const.Img.KNIGHT_IDLE);
                 hero = generateSpriteObjectDemo(spritesheet.getSprite(0), x, y, 1f, 1f);
                 hero.name = "Knight";
                 break;

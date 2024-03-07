@@ -116,6 +116,32 @@
           "defaultStateTitle": "Idle",
           "uid": 2
         }
+      },
+      {
+        "type": "components.debug.DebugSoundPlayer",
+        "properties": {
+          "sound": {
+            "bufferId": 1,
+            "sourceId": 1,
+            "filepath": "C:\\Users\\User\\Documents\\JavaProjects\\extraction_game_concept\\app\\assets\\sounds\\weapon_swing.ogg",
+            "isPlaying": false
+          },
+          "keyBind": 80,
+          "uid": 3
+        }
+      },
+      {
+        "type": "components.debug.DebugSoundPlayer",
+        "properties": {
+          "sound": {
+            "bufferId": 2,
+            "sourceId": 2,
+            "filepath": "C:\\Users\\User\\Documents\\JavaProjects\\extraction_game_concept\\app\\assets\\sounds\\equip_item.ogg",
+            "isPlaying": false
+          },
+          "keyBind": 79,
+          "uid": 4
+        }
       }
     ]
   },
@@ -138,7 +164,7 @@
             "y": 1.0
           },
           "rotation": 0.0,
-          "uid": 3
+          "uid": 5
         }
       },
       {
@@ -162,7 +188,7 @@
             "x": 0,
             "y": 0
           },
-          "uid": 4
+          "uid": 6
         }
       },
       {
@@ -234,7 +260,7 @@
             }
           ],
           "defaultStateTitle": "Idle",
-          "uid": 5
+          "uid": 7
         }
       }
     ]
@@ -258,7 +284,7 @@
             "y": 1.0
           },
           "rotation": 0.0,
-          "uid": 6
+          "uid": 8
         }
       },
       {
@@ -282,7 +308,7 @@
             "x": 0,
             "y": 0
           },
-          "uid": 7
+          "uid": 9
         }
       },
       {
@@ -354,7 +380,7 @@
             }
           ],
           "defaultStateTitle": "Idle",
-          "uid": 8
+          "uid": 10
         }
       }
     ]

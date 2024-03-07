@@ -1,4 +1,6 @@
-package components;
+package components.debug;
+
+import components.Component;
 
 public class DebugTimer extends Component {
     

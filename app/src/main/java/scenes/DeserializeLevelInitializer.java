@@ -1,6 +1,7 @@
 package scenes;
 
 import utils.AssetPool;
+import utils.Const;
 
 public class DeserializeLevelInitializer extends SceneInitializer{
 
@@ -16,7 +17,7 @@ public class DeserializeLevelInitializer extends SceneInitializer{
     @Override
     public void loadResources(Scene scene) {
 
-        AssetPool.getTexture(AssetPool.DUNGEON_FLOOR);
+        AssetPool.getTexture(Const.Img.DUNGEON_FLOOR);
 
     }
 

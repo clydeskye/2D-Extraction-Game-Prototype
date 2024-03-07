@@ -2,10 +2,12 @@ package game;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import scenes.DeserializeLevelInitializer;
+import org.lwjgl.openal.*;
 import scenes.Scene;
 import scenes.SceneInitializer;
 import scenes.TestLevelInitializer;
+
+import static org.lwjgl.openal.ALC11.*;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -24,10 +26,14 @@ public class Window extends JPanel implements Runnable {
     private static float GameScale;
 	private static int WindowWidth, WindowHeight;
     private static Dimension windowSize;
+    private boolean windowLoop;
+
+    private long audioContext, audioDevice;
 
     private static Scene currentScene;
 
     public Window() {
+        windowLoop = true;
         FPS_SET = 30;
         GameScale = 5.0f;
         WindowWidth = (int) (WINDOW_WIDTH_DEFAULT * GameScale);
@@ -63,10 +69,27 @@ public class Window extends JPanel implements Runnable {
     }
 
     public void runWindow() {
+        initAudio();
         initClasses();
         initWindow();
         setFocusable(true);
         startLoop();
+    }
+
+    private void initAudio() {
+        String defaultDeviceName = alcGetString(0, ALC_DEFAULT_DEVICE_SPECIFIER);
+        audioDevice = alcOpenDevice(defaultDeviceName);
+
+        int[] attributes = {0};
+        audioContext = alcCreateContext(audioDevice, attributes);
+        alcMakeContextCurrent(audioContext);
+
+        ALCCapabilities alcCapabilities = ALC.createCapabilities(audioDevice);
+        ALCapabilities alCapabilities = AL.createCapabilities(alcCapabilities);
+
+        if (!alCapabilities.OpenAL11) {
+            assert false : "Audio library not supported.";
+        }
     }
 
     private void initWindow() {
@@ -82,6 +105,12 @@ public class Window extends JPanel implements Runnable {
         // set window frame
         jFrame = new JFrame("Dungeon Game Proj.");
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jFrame.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                windowLoop = false;
+            }
+        });
         jFrame.add(this);
         jFrame.setResizable(false);
         jFrame.pack();
@@ -114,6 +143,11 @@ public class Window extends JPanel implements Runnable {
         thread.start();
     }
     
+    private void destroy() {
+        alcDestroyContext(audioContext);
+        alcCloseDevice(audioDevice);
+    }
+
     public static Window get() {
         if(Window.window == null) {
             Window.window = new Window();
@@ -128,7 +162,7 @@ public class Window extends JPanel implements Runnable {
         double timePerFrame = 1000000000.0 / FPS_SET, timePerUpdate = 1000000000.0 / UPS_SET, deltaU = 0, deltaF = 0;
         long previousTime = System.nanoTime(), lastCheck = System.currentTimeMillis();
         int frames = 0, updates = 0;
-        while(true) {
+        while(windowLoop) {
             long currentTime = System.nanoTime();
             deltaU += (currentTime - previousTime) / timePerUpdate;
             deltaF += (currentTime - previousTime) / timePerFrame;
@@ -144,12 +178,15 @@ public class Window extends JPanel implements Runnable {
                 deltaF--;
             }
         }
+
+        destroy();
+        System.exit(0);
     }
 
     public static int Width() {
         return (int) get().WindowWidth;
     }
-
+    
     public static int Height() {
         return (int) get().WindowHeight;
     }
@@ -157,11 +194,10 @@ public class Window extends JPanel implements Runnable {
     public static Dimension Size() {
         return get().windowSize;
     }
-
+    
     public static float Scale() {
         return get().GameScale;
     }
-
 }
 
 

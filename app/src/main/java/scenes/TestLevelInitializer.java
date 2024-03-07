@@ -1,10 +1,14 @@
 package scenes;
 
+import java.awt.event.KeyEvent;
+
 import org.joml.*;
 import components.*;
+import components.debug.DebugSoundPlayer;
 import game.GameObject;
 import game.Prefabs;
 import utils.AssetPool;
+import utils.Const;
 
 public class TestLevelInitializer extends SceneInitializer{
 
@@ -30,7 +34,13 @@ public class TestLevelInitializer extends SceneInitializer{
         // scene.addGameObjectToScene(block3);
         // scene.addGameObjectToScene(block4);
 
+        DebugSoundPlayer soundPlayer = new DebugSoundPlayer(AssetPool.getSound(Const.Sound.WEAPON_SWING), KeyEvent.VK_P);
+        DebugSoundPlayer soundPlayer2 = new DebugSoundPlayer(AssetPool.getSound(Const.Sound.EQUIP_ITEM), KeyEvent.VK_O);
+
         GameObject hero = Prefabs.generateHeroDemo(-40, 0, 0);
+        hero.addComponent(soundPlayer);
+        hero.addComponent(soundPlayer2);
+
         GameObject hero1 = Prefabs.generateHeroDemo(0, 0, 1);
         GameObject hero2 = Prefabs.generateHeroDemo(40, 0, 2);
 
@@ -44,22 +54,27 @@ public class TestLevelInitializer extends SceneInitializer{
     @Override
     public void loadResources(Scene scene) {
 
-        AssetPool.getTexture(AssetPool.DUNGEON_FLOOR);
-        AssetPool.getTexture(AssetPool.TILES);
-        AssetPool.getTexture(AssetPool.DUNGEON_FLOOR_SPRITESHEET);
-        AssetPool.getTexture(AssetPool.KNIGHT_IDLE);
-        AssetPool.getTexture(AssetPool.WIZZARD_IDLE);
-        AssetPool.getTexture(AssetPool.ROGUE_IDLE);
+        // textures
+        AssetPool.getTexture(Const.Img.DUNGEON_FLOOR);
+        AssetPool.getTexture(Const.Img.TILES);
+        AssetPool.getTexture(Const.Img.DUNGEON_FLOOR_SPRITESHEET);
+        AssetPool.getTexture(Const.Img.KNIGHT_IDLE);
+        AssetPool.getTexture(Const.Img.WIZZARD_IDLE);
+        AssetPool.getTexture(Const.Img.ROGUE_IDLE);
 
-        Spritesheet floorTiles = new Spritesheet(AssetPool.getTexture(AssetPool.DUNGEON_FLOOR_SPRITESHEET), 16, 16, 58);
-        AssetPool.addSpritesheet(AssetPool.DUNGEON_FLOOR_SPRITESHEET, floorTiles);
-        Spritesheet knight_Idle = new Spritesheet(AssetPool.getTexture(AssetPool.KNIGHT_IDLE), 32, 32, 4);
-        AssetPool.addSpritesheet(AssetPool.KNIGHT_IDLE, knight_Idle);
-        Spritesheet rogue_Idle = new Spritesheet(AssetPool.getTexture(AssetPool.ROGUE_IDLE), 32, 32, 4);
-        AssetPool.addSpritesheet(AssetPool.ROGUE_IDLE, rogue_Idle);
-        Spritesheet wizzard_Idle = new Spritesheet(AssetPool.getTexture(AssetPool.WIZZARD_IDLE), 32, 32, 4);
-        AssetPool.addSpritesheet(AssetPool.WIZZARD_IDLE, wizzard_Idle);
+        // spritesheets
+        Spritesheet floorTiles = new Spritesheet(AssetPool.getTexture(Const.Img.DUNGEON_FLOOR_SPRITESHEET), 16, 16, 58);
+        AssetPool.addSpritesheet(Const.Img.DUNGEON_FLOOR_SPRITESHEET, floorTiles);
+        Spritesheet knight_Idle = new Spritesheet(AssetPool.getTexture(Const.Img.KNIGHT_IDLE), 32, 32, 4);
+        AssetPool.addSpritesheet(Const.Img.KNIGHT_IDLE, knight_Idle);
+        Spritesheet rogue_Idle = new Spritesheet(AssetPool.getTexture(Const.Img.ROGUE_IDLE), 32, 32, 4);
+        AssetPool.addSpritesheet(Const.Img.ROGUE_IDLE, rogue_Idle);
+        Spritesheet wizzard_Idle = new Spritesheet(AssetPool.getTexture(Const.Img.WIZZARD_IDLE), 32, 32, 4);
+        AssetPool.addSpritesheet(Const.Img.WIZZARD_IDLE, wizzard_Idle);
 
+        // sounds
+        AssetPool.addSound(Const.Sound.WEAPON_SWING, false);
+        AssetPool.addSound(Const.Sound.EQUIP_ITEM, false);
     }
 
 }
