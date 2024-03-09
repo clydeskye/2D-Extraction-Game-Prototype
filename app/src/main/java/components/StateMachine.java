@@ -127,26 +127,4 @@ public class StateMachine extends Component{
             }
         }
     }
-
-    // @Override
-    // public void imgui() {
-    //     int index = 0;
-    //     for (AnimationState state : states) {
-    //         ImString title = new ImString(state.title);
-    //         ImGui.inputText("State: ", title);
-    //         state.title = title.get();
-
-    //         ImBoolean doesLoop = new ImBoolean(state.doesLoop);
-    //         ImGui.checkbox("Does Loop?", doesLoop);
-    //         state.setLoop(doesLoop.get());
-
-    //         for (Frame frame : state.animationFrames) {
-    //             float[] temp = new float[1];
-    //             temp[0] = frame.frameTime;
-    //             ImGui.dragFloat("Frame(" + index + ") Time: ", temp, 0.01f);
-    //             frame.frameTime = temp[0];
-    //             index++;
-    //         }
-    //     }
-    // }
 }

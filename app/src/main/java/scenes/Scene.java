@@ -122,6 +122,7 @@ public class Scene {
 
     public void render(Graphics2D g) {
         this.renderer.render(g);
+        // this.physics2d.debugRender(g);
     }
 
     public Camera camera() {
@@ -136,7 +137,7 @@ public class Scene {
     //     this.sceneInitializer.imgui();
     // }
 
-    public void save() {
+    public void save(String filename) {
         Gson gson = new GsonBuilder()
         .setPrettyPrinting()
         .registerTypeAdapter(Component.class, new ComponentDeserializer())
@@ -144,7 +145,7 @@ public class Scene {
         .create();
 
         try {
-            FileWriter writer = new FileWriter("app/saves/level.json");
+            FileWriter writer = new FileWriter("app/saves/" + filename + ".json");
             List<GameObject> objsToSerialize = new ArrayList<>();
             for(GameObject go : this.gameObjects) {
                 if(go.doSerialization()) {
@@ -158,7 +159,7 @@ public class Scene {
         }
     }
 
-    public void laod() {
+    public void laod(String filename) {
         Gson gson = new GsonBuilder()
         .setPrettyPrinting()
         .registerTypeAdapter(Component.class, new ComponentDeserializer())
@@ -167,7 +168,7 @@ public class Scene {
 
         String inFile = "";
         try {
-            inFile = new String(Files.readAllBytes(Paths.get("app/saves/level.json")));
+            inFile = new String(Files.readAllBytes(Paths.get("app/saves/" + filename + ".json")));
         } catch(IOException e) {
             e.printStackTrace();
         }

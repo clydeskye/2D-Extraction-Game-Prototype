@@ -20,6 +20,10 @@ public class Box2DCollider extends Collider {
         return this.origin;
     }
 
+    public void setOrigin(Vector2f origin) {
+        this.origin = origin;
+    }
+
     @Override
     public void editorUpdate(float dt) {
         Vector2f center = new Vector2f(this.gameObject.transform.position.x, this.gameObject.transform.position.y).add(this.offset);

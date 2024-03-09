@@ -1,6 +1,8 @@
 package utils;
 
 public class Const {
+
+    public static final float O_SCALE = 0.4f;
     
     public class Img {
         private static final String SPRITES_PARENT_FOLDER = "app/assets/sprites/";
@@ -11,7 +13,8 @@ public class Const {
         public static final String KNIGHT_IDLE = SPRITES_PARENT_FOLDER + "entities/knight/Idle-Sheet.png";
         public static final String WIZZARD_IDLE = SPRITES_PARENT_FOLDER + "entities/wizzard/Idle-Sheet.png";
         public static final String ROGUE_IDLE = SPRITES_PARENT_FOLDER + "entities/rogue/Idle-Sheet.png";
-    
+        public static final String BOOK = SPRITES_PARENT_FOLDER + "Book.png";
+
     }
 
     public class Sound {

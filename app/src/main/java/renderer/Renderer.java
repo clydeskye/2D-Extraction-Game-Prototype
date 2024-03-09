@@ -1,6 +1,8 @@
 package renderer;
 
 import game.*;
+import physics2d.components.Box2DCollider;
+import physics2d.components.Collider;
 import components.*;
 import utils.*;
 import java.util.*;
@@ -18,6 +20,9 @@ public class Renderer {
 
     private final Vector4f DEFAULT_COLOR_VEC = new Vector4f(1f, 1f, 1f, 1f);
     private List<SpriteRenderer> spriteRenderers = new ArrayList<>();
+    private List<Collider> colliders = new ArrayList<>();
+
+
     private BufferedImage currentFrame;
 
     public Renderer() {
@@ -34,6 +39,10 @@ public class Renderer {
             
             // check & update dirty sprites
             for (SpriteRenderer spr : spriteRenderers) {
+                if (spr.getLastSpriteImg() == null) {
+                    spr.setLastSpriteImg(spr.getDefaultSpriteImg());
+                }
+
                 if (spr.isDirty()) {
                     BufferedImage imageTemp = spr.getDefaultSpriteImg();
     
@@ -62,16 +71,47 @@ public class Renderer {
                 Vector3f position = spr.gameObject.transform.position;
                 Vector2f scale = spr.gameObject.transform.scale;
     
-                int width = (int) (imageTemp.getWidth() * scale.x * Window.Scale());
-                int height = (int) (imageTemp.getHeight() * scale.y * Window.Scale());
-                int x = (int) (position.x * Window.Scale());
-                int y = (int) -((position.z * Window.Scale()) + (position.y * Window.Scale()) + height);
+                int width = (int) (imageTemp.getWidth() * scale.x * Window.Scale() * Const.O_SCALE);
+                int height = (int) (imageTemp.getHeight() * scale.y * Window.Scale() * Const.O_SCALE);
+                int x = (int) Math.round(position.x * Window.Scale() * Const.O_SCALE);
+                int y = (int) -(Math.round((position.z * Window.Scale() * Const.O_SCALE) + (position.y * Window.Scale() * Const.O_SCALE) + height));
     
                 if (!spr.getColorVec().equals(DEFAULT_COLOR_VEC)) {
                     imageTemp = GameUtils.SetImageColor(imageTemp, spr.getColorVec());
                 }
                 g2d.drawImage(imageTemp, x, y, width, height, null);
+
+                // g2d.setColor(Color.red);
+                // g2d.drawRect(x, y, width, height);
             }
+
+            // for (int i = 0; i < spriteRenderers.size(); i++) {
+            //     SpriteRenderer spr = spriteRenderers.get(i);
+            //     BufferedImage imageTemp = spr.getLastSpriteImg();
+            //     Vector3f position = spr.gameObject.transform.position;
+            //     Vector2f scale = spr.gameObject.transform.scale;
+    
+            //     int width = (int) (imageTemp.getWidth() * scale.x * Window.Scale() * Const.O_SCALE);
+            //     int height = (int) (imageTemp.getHeight() * scale.y * Window.Scale() * Const.O_SCALE);
+            //     int x = (int) (position.x * Window.Scale() * Const.O_SCALE);
+            //     int y = (int) -((position.z * Window.Scale() * Const.O_SCALE) + (position.y * Window.Scale() * Const.O_SCALE) + height);
+    
+            //     if (!spr.getColorVec().equals(DEFAULT_COLOR_VEC)) {
+            //         imageTemp = GameUtils.SetImageColor(imageTemp, spr.getColorVec());
+            //     }
+            //     g2d.drawImage(imageTemp, x, y, width, height, null);
+
+            //     // Box2DCollider collider;
+            //     // if ((collider = (Box2DCollider) colliders.get(i)) != null) {
+            //     //     int xC = (int) ((position.x * scale.x * Window.Scale() * Const.O_SCALE) + collider.getOrigin().x);
+            //     //     int yC = (int) -((position.y + collider.getOrigin().y) * scale.x * Window.Scale() * Const.O_SCALE);
+
+            //     //     // System.out.println(collider.getOrigin().x);
+
+            //     //     g2d.setColor(Color.red);
+            //     //     g2d.drawRect(xC, yC - height, width, height);
+            //     // }
+            // }
      
             g2d.dispose();
         }
@@ -82,10 +122,10 @@ public class Renderer {
 
         g.drawImage(currentFrame, 0, 0, Window.Width(), Window.Height(), null);
 
-        g.setColor(Color.RED);
-        g.drawRect(Window.Width() / 2, Window.Height() / 2, 10, 10);
-        g.drawRect(0, 0 / 2, 10, 10);
-        g.drawRect(Window.Width() / 4, Window.Height() / 4, 10, 10);
+        // g.setColor(Color.RED);
+        // g.drawRect(Window.Width() / 2, Window.Height() / 2, 10, 10);
+        // g.drawRect(0, 0 / 2, 10, 10);
+        // g.drawRect(Window.Width() / 4, Window.Height() / 4, 10, 10);
         // g.dispose();
     }
 
@@ -98,6 +138,14 @@ public class Renderer {
         if(spr != null) {
             spriteRenderers.add(spr);
             sortSprites();
+        }
+        addCollider(go);
+    }
+
+    private void addCollider(GameObject go) {
+        Box2DCollider collider = (Box2DCollider) go.getComponent(Collider.class);
+        if(collider != null) {
+            colliders.add(collider);
         }
     }
 
@@ -130,78 +178,4 @@ public class Renderer {
             System.out.println(spprrr);
         }
     }
-
-    // private void add(SpriteRenderer sprite) {
-    //     boolean added = false;
-    //     for(RenderBatch batch : batches) {
-    //         if (batch.hasRoom() && batch.getZIndex() == sprite.gameObject.transform.zIndex) {
-    //             Texture tex = sprite.getTexture();
-    //             if(tex == null || (batch.hasTexture(tex) || batch.hasTextureRoom())) {
-    //                 batch.addSprite(sprite);
-    //                 added = true;
-    //                 break;
-    //             }
-    //         }
-    //     }
-
-    //     if(!added) {
-    //         RenderBatch newBatch = new RenderBatch(MAX_BATCH_SIZE, sprite.gameObject.transform.zIndex, this);
-    //         newBatch.start();
-    //         batches.add(newBatch);
-    //         newBatch.addSprite(sprite);
-    //         Collections.sort(batches);
-    //     }
-    // }
-    
-    // //images
-    // BufferedImage imgTmp, image, rotatedImage, combinedImage;
-    
-    // // Settings Translation
-    // Vector2f position = new Vector2f(160f, 90f);
-    // Vector2f scale = new Vector2f(1f, 1f);
-    // Vector4f cVec = new Vector4f(1f, 1f, 1f, 1f);
-    // float roation = 0f;
-    
-    // private void initTest() {
-    //     imgTmp = AssetPool.GetSpriteAtlas(AssetPool.GROUND_SPRITESHEET).getSubimage(0, 0, 16, 16);
-    //     image = imgTmp;
-    
-    
-    //     if(cVec.x != 1f || cVec.y != 1f || cVec.z != 1f || cVec.w != 1f)  {
-    //         image = GameUtils.SetImageColor(imgTmp, cVec);
-    //     }
-    
-    //     if (roation != 0.0f) {
-    //         image = GameUtils.RotateImage(imgTmp, roation);
-    //     }
-    
-    
-    
-    //     float zoom = 1f;
-    //     Vector2f pos = new Vector2f(160f * Window.Scale(), 90f * Window.Scale());
-    
-    //     float rot = (float) Math.toRadians(0f);
-    
-    //     AffineTransform aT1 = new AffineTransform();
-    
-    
-    //     combinedImage = new BufferedImage((int) Window.Width(), (int) Window.Height(), BufferedImage.TYPE_INT_ARGB);
-    
-    
-    //     Graphics2D g2 = combinedImage.createGraphics();
-    
-    //     g2.transform(aT1);
-    //     g2.drawImage(image, (int) (position.x * Window.Scale()), (int) (position.y * Window.Scale()), (int) (image.getWidth() * scale.x * Window.Scale()), (int) (image.getHeight() * scale.y * Window.Scale()), null);
-    //     g2.dispose();
-    //     //
-    
-    //     // Save final image
-    //     try {
-    // 		ImageIO.write(combinedImage, "PNG", new File("app/saves", "combined.png"));
-    // 	} catch (IOException e) {
-    // 		// TODO Auto-generated catch block
-    // 		e.printStackTrace();
-    // 	}
-    
-    // }
 }

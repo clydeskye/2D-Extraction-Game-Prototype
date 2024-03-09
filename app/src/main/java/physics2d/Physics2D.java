@@ -7,13 +7,21 @@ import org.jbox2d.dynamics.BodyDef;
 import org.jbox2d.dynamics.BodyType;
 import org.jbox2d.dynamics.World;
 import org.joml.Vector2f;
+import org.joml.Vector3f;
+
+import java.awt.Graphics2D;
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
 
 import physics2d.components.*;
+import utils.Const;
 import game.GameObject;
+import game.Window;
 import components.Transform;
 
 public class Physics2D {
-    private Vec2 gravity = new Vec2(0, -10.0f);
+    private Vec2 gravity = new Vec2(0, -500.0f);
     private World world = new World(gravity);
 
     private float physicsTime = 0.0f;
@@ -21,9 +29,13 @@ public class Physics2D {
     private int velocityIterations = 8;
     private int positionIterations = 3;
 
+    private List<GameObject> gameObjects = new ArrayList<>();
+    private List<Body> bodies = new ArrayList<>();
+
     public void add(GameObject go) {
         Rigidbody2D rb = go.getComponent(Rigidbody2D.class);
         if (rb != null && rb.getRawBody() == null) {
+            gameObjects.add(go);
             Transform transform = go.transform;
 
             BodyDef bodyDef = new BodyDef();
@@ -51,16 +63,17 @@ public class Physics2D {
                 Vector2f offset = boxCollider.getOffset();
                 Vector2f origin = new Vector2f(boxCollider.getOrigin());
                 shape.setAsBox(halfSize.x, halfSize.y, new Vec2(origin.x, origin.y), 0);
-
+                
                 Vec2 pos = bodyDef.position;
                 float xPos = pos.x + offset.x;
                 float yPos = pos.y + offset.y;
                 bodyDef.position.set(xPos, yPos);
             }
-
+            
             Body body = this.world.createBody(bodyDef);
             rb.setRawBody(body);
             body.createFixture(shape, rb.getMass());
+            bodies.add(body);
         }
     }
 
@@ -82,4 +95,26 @@ public class Physics2D {
             world.step(physicsTimeStep, velocityIterations, positionIterations);
         }
     }
+
+    public void debugRender(Graphics2D g) {
+        // float x = 0, y = 0, width, height;
+        // // for (int i = 0; i < gameObjects.size(); i++) {
+        // //     Vector3f pos = gameObjects.get(i).transform.position;
+        // //     Body body = bodies.get(i);
+
+        // //     x = pos.x + body.getPosition().x;
+
+
+        // // }
+        // for (int i = 0; i < gameObjects.size(); i++) {
+        //     Vector3f pos = gameObjects.get(i).transform.position;
+        //     Body body = bodies.get(i);
+
+        //     x = (pos.x * Window.Scale() * Const.O_SCALE) + (body.getPosition().x * Window.Scale() * Const.O_SCALE) + (Window.Width() / 2);
+        //     y = (pos.y * Window.Scale() * Const.O_SCALE) + (body.getPosition().y * Window.Scale() * Const.O_SCALE);
+        // }
+        // g.setColor(Color.green);
+        // g.drawRect((int) x, (int) -y + (Window.Height() / 2), 10, 10);
+    }
+
 }

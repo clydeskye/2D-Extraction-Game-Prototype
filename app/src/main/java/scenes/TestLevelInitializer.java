@@ -2,16 +2,14 @@ package scenes;
 
 import java.awt.event.KeyEvent;
 
-import org.joml.*;
 import components.*;
-import components.debug.DebugSoundPlayer;
+import components.debug.*;
 import game.GameObject;
 import game.Prefabs;
 import utils.AssetPool;
 import utils.Const;
 
 public class TestLevelInitializer extends SceneInitializer{
-
 
     public TestLevelInitializer() {
 
@@ -48,7 +46,7 @@ public class TestLevelInitializer extends SceneInitializer{
         scene.addGameObjectToScene(hero1);
         scene.addGameObjectToScene(hero2);
 
-        scene.save();
+        scene.save("level");
     }
 
     @Override
@@ -63,14 +61,10 @@ public class TestLevelInitializer extends SceneInitializer{
         AssetPool.getTexture(Const.Img.ROGUE_IDLE);
 
         // spritesheets
-        Spritesheet floorTiles = new Spritesheet(AssetPool.getTexture(Const.Img.DUNGEON_FLOOR_SPRITESHEET), 16, 16, 58);
-        AssetPool.addSpritesheet(Const.Img.DUNGEON_FLOOR_SPRITESHEET, floorTiles);
-        Spritesheet knight_Idle = new Spritesheet(AssetPool.getTexture(Const.Img.KNIGHT_IDLE), 32, 32, 4);
-        AssetPool.addSpritesheet(Const.Img.KNIGHT_IDLE, knight_Idle);
-        Spritesheet rogue_Idle = new Spritesheet(AssetPool.getTexture(Const.Img.ROGUE_IDLE), 32, 32, 4);
-        AssetPool.addSpritesheet(Const.Img.ROGUE_IDLE, rogue_Idle);
-        Spritesheet wizzard_Idle = new Spritesheet(AssetPool.getTexture(Const.Img.WIZZARD_IDLE), 32, 32, 4);
-        AssetPool.addSpritesheet(Const.Img.WIZZARD_IDLE, wizzard_Idle);
+        AssetPool.addSpritesheet(Const.Img.DUNGEON_FLOOR_SPRITESHEET, new Spritesheet(AssetPool.getTexture(Const.Img.DUNGEON_FLOOR_SPRITESHEET), 16, 16, 58));
+        AssetPool.addSpritesheet(Const.Img.KNIGHT_IDLE, new Spritesheet(AssetPool.getTexture(Const.Img.KNIGHT_IDLE), 32, 32, 4));
+        AssetPool.addSpritesheet(Const.Img.ROGUE_IDLE, new Spritesheet(AssetPool.getTexture(Const.Img.ROGUE_IDLE), 32, 32, 4));
+        AssetPool.addSpritesheet(Const.Img.WIZZARD_IDLE, new Spritesheet(AssetPool.getTexture(Const.Img.WIZZARD_IDLE), 32, 32, 4));
 
         // sounds
         AssetPool.addSound(Const.Sound.WEAPON_SWING, false);

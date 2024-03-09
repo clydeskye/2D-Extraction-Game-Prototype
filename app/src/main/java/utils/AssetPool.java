@@ -29,6 +29,12 @@ public class AssetPool {
     private static Map<String, Spritesheet> spritesheets = new HashMap<>();
     private static Map<String, Sound> sounds = new HashMap<>();
 
+    public static void clear() {
+        textures.clear();
+        spritesheets.clear();
+        sounds.clear();
+    }
+
     public static BufferedImage GetSpriteAtlas(String filename) {
 		BufferedImage img = null;
 

@@ -46,74 +46,67 @@
         }
       },
       {
-        "type": "components.StateMachine",
+        "type": "components.AnimatedSprite",
         "properties": {
-          "stateTransfers": {},
-          "states": [
+          "animationFrames": [
             {
-              "title": "Idle",
-              "animationFrames": [
-                {
-                  "sprite": {
-                    "texture": {
-                      "filepath": "app/assets/sprites/entities/knight/Idle-Sheet.png",
-                      "width": 128,
-                      "height": 32
-                    },
-                    "width": 32,
-                    "height": 32,
-                    "x": 0,
-                    "y": 0
-                  },
-                  "frameTime": 0.23
+              "sprite": {
+                "texture": {
+                  "filepath": "app/assets/sprites/entities/knight/Idle-Sheet.png",
+                  "width": 128,
+                  "height": 32
                 },
-                {
-                  "sprite": {
-                    "texture": {
-                      "filepath": "app/assets/sprites/entities/knight/Idle-Sheet.png",
-                      "width": 128,
-                      "height": 32
-                    },
-                    "width": 32,
-                    "height": 32,
-                    "x": 32,
-                    "y": 0
-                  },
-                  "frameTime": 0.23
+                "width": 32,
+                "height": 32,
+                "x": 0,
+                "y": 0
+              },
+              "frameTime": 0.2
+            },
+            {
+              "sprite": {
+                "texture": {
+                  "filepath": "app/assets/sprites/entities/knight/Idle-Sheet.png",
+                  "width": 128,
+                  "height": 32
                 },
-                {
-                  "sprite": {
-                    "texture": {
-                      "filepath": "app/assets/sprites/entities/knight/Idle-Sheet.png",
-                      "width": 128,
-                      "height": 32
-                    },
-                    "width": 32,
-                    "height": 32,
-                    "x": 64,
-                    "y": 0
-                  },
-                  "frameTime": 0.23
+                "width": 32,
+                "height": 32,
+                "x": 32,
+                "y": 0
+              },
+              "frameTime": 0.2
+            },
+            {
+              "sprite": {
+                "texture": {
+                  "filepath": "app/assets/sprites/entities/knight/Idle-Sheet.png",
+                  "width": 128,
+                  "height": 32
                 },
-                {
-                  "sprite": {
-                    "texture": {
-                      "filepath": "app/assets/sprites/entities/knight/Idle-Sheet.png",
-                      "width": 128,
-                      "height": 32
-                    },
-                    "width": 32,
-                    "height": 32,
-                    "x": 96,
-                    "y": 0
-                  },
-                  "frameTime": 0.23
-                }
-              ],
-              "doesLoop": true
+                "width": 32,
+                "height": 32,
+                "x": 64,
+                "y": 0
+              },
+              "frameTime": 0.2
+            },
+            {
+              "sprite": {
+                "texture": {
+                  "filepath": "app/assets/sprites/entities/knight/Idle-Sheet.png",
+                  "width": 128,
+                  "height": 32
+                },
+                "width": 32,
+                "height": 32,
+                "x": 96,
+                "y": 0
+              },
+              "frameTime": 0.2
             }
           ],
-          "defaultStateTitle": "Idle",
+          "doesLoop": true,
           "uid": 2
         }
       },
@@ -192,74 +185,67 @@
         }
       },
       {
-        "type": "components.StateMachine",
+        "type": "components.AnimatedSprite",
         "properties": {
-          "stateTransfers": {},
-          "states": [
+          "animationFrames": [
             {
-              "title": "Idle",
-              "animationFrames": [
-                {
-                  "sprite": {
-                    "texture": {
-                      "filepath": "app/assets/sprites/entities/wizzard/Idle-Sheet.png",
-                      "width": 128,
-                      "height": 32
-                    },
-                    "width": 32,
-                    "height": 32,
-                    "x": 0,
-                    "y": 0
-                  },
-                  "frameTime": 0.23
+              "sprite": {
+                "texture": {
+                  "filepath": "app/assets/sprites/entities/wizzard/Idle-Sheet.png",
+                  "width": 128,
+                  "height": 32
                 },
-                {
-                  "sprite": {
-                    "texture": {
-                      "filepath": "app/assets/sprites/entities/wizzard/Idle-Sheet.png",
-                      "width": 128,
-                      "height": 32
-                    },
-                    "width": 32,
-                    "height": 32,
-                    "x": 32,
-                    "y": 0
-                  },
-                  "frameTime": 0.23
+                "width": 32,
+                "height": 32,
+                "x": 0,
+                "y": 0
+              },
+              "frameTime": 0.2
+            },
+            {
+              "sprite": {
+                "texture": {
+                  "filepath": "app/assets/sprites/entities/wizzard/Idle-Sheet.png",
+                  "width": 128,
+                  "height": 32
                 },
-                {
-                  "sprite": {
-                    "texture": {
-                      "filepath": "app/assets/sprites/entities/wizzard/Idle-Sheet.png",
-                      "width": 128,
-                      "height": 32
-                    },
-                    "width": 32,
-                    "height": 32,
-                    "x": 64,
-                    "y": 0
-                  },
-                  "frameTime": 0.23
+                "width": 32,
+                "height": 32,
+                "x": 32,
+                "y": 0
+              },
+              "frameTime": 0.2
+            },
+            {
+              "sprite": {
+                "texture": {
+                  "filepath": "app/assets/sprites/entities/wizzard/Idle-Sheet.png",
+                  "width": 128,
+                  "height": 32
                 },
-                {
-                  "sprite": {
-                    "texture": {
-                      "filepath": "app/assets/sprites/entities/wizzard/Idle-Sheet.png",
-                      "width": 128,
-                      "height": 32
-                    },
-                    "width": 32,
-                    "height": 32,
-                    "x": 96,
-                    "y": 0
-                  },
-                  "frameTime": 0.23
-                }
-              ],
-              "doesLoop": true
+                "width": 32,
+                "height": 32,
+                "x": 64,
+                "y": 0
+              },
+              "frameTime": 0.2
+            },
+            {
+              "sprite": {
+                "texture": {
+                  "filepath": "app/assets/sprites/entities/wizzard/Idle-Sheet.png",
+                  "width": 128,
+                  "height": 32
+                },
+                "width": 32,
+                "height": 32,
+                "x": 96,
+                "y": 0
+              },
+              "frameTime": 0.2
             }
           ],
-          "defaultStateTitle": "Idle",
+          "doesLoop": true,
           "uid": 7
         }
       }
@@ -312,74 +298,67 @@
         }
       },
       {
-        "type": "components.StateMachine",
+        "type": "components.AnimatedSprite",
         "properties": {
-          "stateTransfers": {},
-          "states": [
+          "animationFrames": [
             {
-              "title": "Idle",
-              "animationFrames": [
-                {
-                  "sprite": {
-                    "texture": {
-                      "filepath": "app/assets/sprites/entities/rogue/Idle-Sheet.png",
-                      "width": 128,
-                      "height": 32
-                    },
-                    "width": 32,
-                    "height": 32,
-                    "x": 0,
-                    "y": 0
-                  },
-                  "frameTime": 0.23
+              "sprite": {
+                "texture": {
+                  "filepath": "app/assets/sprites/entities/rogue/Idle-Sheet.png",
+                  "width": 128,
+                  "height": 32
                 },
-                {
-                  "sprite": {
-                    "texture": {
-                      "filepath": "app/assets/sprites/entities/rogue/Idle-Sheet.png",
-                      "width": 128,
-                      "height": 32
-                    },
-                    "width": 32,
-                    "height": 32,
-                    "x": 32,
-                    "y": 0
-                  },
-                  "frameTime": 0.23
+                "width": 32,
+                "height": 32,
+                "x": 0,
+                "y": 0
+              },
+              "frameTime": 0.2
+            },
+            {
+              "sprite": {
+                "texture": {
+                  "filepath": "app/assets/sprites/entities/rogue/Idle-Sheet.png",
+                  "width": 128,
+                  "height": 32
                 },
-                {
-                  "sprite": {
-                    "texture": {
-                      "filepath": "app/assets/sprites/entities/rogue/Idle-Sheet.png",
-                      "width": 128,
-                      "height": 32
-                    },
-                    "width": 32,
-                    "height": 32,
-                    "x": 64,
-                    "y": 0
-                  },
-                  "frameTime": 0.23
+                "width": 32,
+                "height": 32,
+                "x": 32,
+                "y": 0
+              },
+              "frameTime": 0.2
+            },
+            {
+              "sprite": {
+                "texture": {
+                  "filepath": "app/assets/sprites/entities/rogue/Idle-Sheet.png",
+                  "width": 128,
+                  "height": 32
                 },
-                {
-                  "sprite": {
-                    "texture": {
-                      "filepath": "app/assets/sprites/entities/rogue/Idle-Sheet.png",
-                      "width": 128,
-                      "height": 32
-                    },
-                    "width": 32,
-                    "height": 32,
-                    "x": 96,
-                    "y": 0
-                  },
-                  "frameTime": 0.23
-                }
-              ],
-              "doesLoop": true
+                "width": 32,
+                "height": 32,
+                "x": 64,
+                "y": 0
+              },
+              "frameTime": 0.2
+            },
+            {
+              "sprite": {
+                "texture": {
+                  "filepath": "app/assets/sprites/entities/rogue/Idle-Sheet.png",
+                  "width": 128,
+                  "height": 32
+                },
+                "width": 32,
+                "height": 32,
+                "x": 96,
+                "y": 0
+              },
+              "frameTime": 0.2
             }
           ],
-          "defaultStateTitle": "Idle",
+          "doesLoop": true,
           "uid": 10
         }
       }

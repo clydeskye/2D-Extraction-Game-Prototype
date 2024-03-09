@@ -2,24 +2,36 @@ package game;
 
 import org.joml.*;
 import components.*;
+import physics2d.components.*;
+import physics2d.enums.BodyType;
 import utils.AssetPool;
 import utils.Const;
 
 public class Prefabs {
     
-    public static GameObject generateDemoBlock(float x, float y, float z, int spriteIndex) {
+    public static GameObject generateDemoBlock(float x, float y, float z, int spriteIndex, BodyType bodyType) {
         // Create required components
 
         Sprite sprite = AssetPool.getSpritesheet(Const.Img.DUNGEON_FLOOR_SPRITESHEET).getSprite(spriteIndex);
         
         SpriteRenderer spriteRenderer = new SpriteRenderer();
         spriteRenderer.setSprite(sprite);
+
+        Box2DCollider collider = new Box2DCollider();
+        collider.setHalfSize(new Vector2f(16f, 16));
         
+        Rigidbody2D body = new Rigidbody2D();
+        body.setBodyType(bodyType);
+        body.setMass(100f);
+        body.setFixedRotation(false);
+
         // Create GameObject & add components
         GameObject block = Window.getCurrentScene().createGameObject("Debug Block");
         block.transform.position = new Vector3f(x, y, z);
-        block.transform.scale = new Vector2f(0.8f, 0.8f);
+        block.transform.scale = new Vector2f(1f, 1f);
         block.addComponent(spriteRenderer);
+        block.addComponent(collider);
+        block.addComponent(body);
 
         return block;
     }
@@ -51,20 +63,26 @@ public class Prefabs {
                 break;
         }
 
-        AnimationState idle = new AnimationState();
-        idle.title = "Idle";
-        idle.setLoop(true);
-        float frameTime = 0.23f;
+        AnimatedSprite idle = new AnimatedSprite();
+        float frameTime = 0.2f;
         int numFrames = 4;
 
         for (int i = 0; i < numFrames; i++) {
             idle.addFrame(spritesheet.getSprite(i), frameTime);
         }
 
-        StateMachine stateMachine = new StateMachine();
-        stateMachine.addState(idle);
-        stateMachine.setDefaultState(idle);
-        hero.addComponent(stateMachine);
+        Box2DCollider collider = new Box2DCollider();
+        collider.setHalfSize(new Vector2f(14f, 27f));
+        collider.setOrigin(new Vector2f(8f, 5.5f));
+
+        Rigidbody2D body = new Rigidbody2D();
+        body.setBodyType(BodyType.Dynamic);
+        body.setMass(50f);
+        body.setFixedRotation(true);
+
+        hero.addComponent(collider);
+        hero.addComponent(body);
+        hero.addComponent(idle);
 
         return hero;
     }
@@ -84,8 +102,8 @@ public class Prefabs {
 
     public static GameObject generateSpriteObject(Sprite sprite, float sizeX, float sizeY) {
         GameObject block = Window.getCurrentScene().createGameObject("Generated_Object");
-        block.transform.scale.x = sizeX;
-        block.transform.scale.y = sizeY;
+        block.transform.scale.x = sizeX ;
+        block.transform.scale.y = sizeY ;
         SpriteRenderer spriteRenderer = new SpriteRenderer();
         spriteRenderer.setSprite(sprite);
         block.addComponent(spriteRenderer);

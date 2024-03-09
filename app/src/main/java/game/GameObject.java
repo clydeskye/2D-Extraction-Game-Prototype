@@ -21,7 +21,7 @@ public class GameObject {
         this.name = name;
         this.components = new ArrayList<>();
         this.uid = ID_COUNTER++;
-        System.out.println(this + " (CREATED)");
+        // System.out.println(this + " (CREATED)");
     }
 
     public <T extends Component> T getComponent(Class<T> componentClass) {

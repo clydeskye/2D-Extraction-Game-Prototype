@@ -3,9 +3,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import org.lwjgl.openal.*;
+
+import scenes.PhysTestLevelInitializer;
 import scenes.Scene;
 import scenes.SceneInitializer;
 import scenes.TestLevelInitializer;
+import utils.AssetPool;
 
 import static org.lwjgl.openal.ALC11.*;
 
@@ -14,9 +17,10 @@ import java.awt.Graphics2D;
 import java.awt.Dimension;
 
 public class Window extends JPanel implements Runnable {
-	
-    public final static int UPS_SET = 60;
+    
+    public final static int UPS_SET = 100;
 	public final static int WINDOW_WIDTH_DEFAULT = 320, WINDOW_HEIGHT_DEFAULT = 180;	
+    private float dt = 1f / ((float) UPS_SET);
     
     private static Window window;
     private JFrame jFrame;
@@ -34,7 +38,7 @@ public class Window extends JPanel implements Runnable {
 
     public Window() {
         windowLoop = true;
-        FPS_SET = 30;
+        FPS_SET = 60;
         GameScale = 5.0f;
         WindowWidth = (int) (WINDOW_WIDTH_DEFAULT * GameScale);
         WindowHeight = (int) (WINDOW_HEIGHT_DEFAULT * GameScale);
@@ -42,12 +46,12 @@ public class Window extends JPanel implements Runnable {
     }
 
     private void initClasses() {
-        changeScene(new TestLevelInitializer());
+        changeScene(new PhysTestLevelInitializer());
     }
 
+    private int timerTest = 0;
     private void update(float dt) {
         currentScene.update(dt);
-
     }
 
     private void render(Graphics2D g) {
@@ -70,7 +74,10 @@ public class Window extends JPanel implements Runnable {
 
     public void runWindow() {
         initAudio();
+        initPanel();
+
         initClasses();
+        
         initWindow();
         setFocusable(true);
         startLoop();
@@ -92,17 +99,18 @@ public class Window extends JPanel implements Runnable {
         }
     }
 
-    private void initWindow() {
-        // set window panel
+    private void initPanel() {
         MouseInputListener mouseListener = new MouseInputListener();
-        addKeyListener(new KeyInputListener());
-        addMouseListener(mouseListener);
-		addMouseMotionListener(mouseListener);
+        KeyInputListener keyListener = new KeyInputListener();
         setMinimumSize(windowSize);
         setPreferredSize(windowSize);
         setMaximumSize(windowSize);
+        addKeyListener(keyListener);
+        addMouseListener(mouseListener);
+		addMouseMotionListener(mouseListener);
+    }
 
-        // set window frame
+    private void initWindow() {
         jFrame = new JFrame("Dungeon Game Proj.");
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -144,6 +152,8 @@ public class Window extends JPanel implements Runnable {
     }
     
     private void destroy() {
+        currentScene.destroy();
+        AssetPool.clear();
         alcDestroyContext(audioContext);
         alcCloseDevice(audioDevice);
     }
@@ -154,8 +164,6 @@ public class Window extends JPanel implements Runnable {
         }
         return Window.window;
     }
-
-    float dt = 1f / UPS_SET;
 
     @Override
     public void run() {

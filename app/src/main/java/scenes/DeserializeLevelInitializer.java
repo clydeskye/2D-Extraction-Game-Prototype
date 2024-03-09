@@ -11,7 +11,7 @@ public class DeserializeLevelInitializer extends SceneInitializer{
 
     @Override
     public void init(Scene scene) {
-        scene.laod();
+        scene.laod("level");
     }
 
     @Override
