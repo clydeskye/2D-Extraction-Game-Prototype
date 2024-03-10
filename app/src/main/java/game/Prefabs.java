@@ -72,8 +72,10 @@ public class Prefabs {
         }
 
         Box2DCollider collider = new Box2DCollider();
+
         collider.setHalfSize(new Vector2f(14f, 27f));
-        collider.setOrigin(new Vector2f(8f, 5.5f));
+        collider.setOrigin(new Vector2f(0f, -2.5f));
+
 
         Rigidbody2D body = new Rigidbody2D();
         body.setBodyType(BodyType.Dynamic);

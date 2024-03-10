@@ -1,0 +1,346 @@
+[
+  {
+    "uid": 0,
+    "name": "Debug",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.debug.DebugKeyTrigger",
+        "properties": {
+          "key": 8,
+          "filename": "physics",
+          "uid": 0
+        }
+      }
+    ]
+  },
+  {
+    "uid": 3,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 1.6,
+            "y": 32.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 9
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 144
+          },
+          "uid": 10
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 11
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.5,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 12
+        }
+      }
+    ]
+  },
+  {
+    "uid": 1,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 1
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 144
+          },
+          "uid": 2
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 3
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.5,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 4
+        }
+      }
+    ]
+  },
+  {
+    "uid": 4,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 3.2,
+            "y": 48.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 13
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 144
+          },
+          "uid": 14
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 15
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.5,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 16
+        }
+      }
+    ]
+  },
+  {
+    "uid": 2,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 1.0,
+            "y": 16.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 5
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 144
+          },
+          "uid": 6
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 7
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.5,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 8
+        }
+      }
+    ]
+  }
+]

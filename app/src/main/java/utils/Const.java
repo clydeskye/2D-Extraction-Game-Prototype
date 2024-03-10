@@ -2,7 +2,7 @@ package utils;
 
 public class Const {
 
-    public static final float O_SCALE = 0.4f;
+    public static final float O_SCALE = 1f;
     
     public class Img {
         private static final String SPRITES_PARENT_FOLDER = "app/assets/sprites/";
@@ -22,7 +22,6 @@ public class Const {
 
         public static final String WEAPON_SWING = SOUNDS_PARENT_FOLDER + "weapon_swing.ogg";
         public static final String EQUIP_ITEM = SOUNDS_PARENT_FOLDER + "equip_item.ogg";
-
     }
 
 }

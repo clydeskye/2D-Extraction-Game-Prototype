@@ -21,7 +21,7 @@ import game.Window;
 import components.Transform;
 
 public class Physics2D {
-    private Vec2 gravity = new Vec2(0, -500.0f);
+    private Vec2 gravity = new Vec2(0, -300.0f);
     private World world = new World(gravity);
 
     private float physicsTime = 0.0f;
@@ -95,26 +95,4 @@ public class Physics2D {
             world.step(physicsTimeStep, velocityIterations, positionIterations);
         }
     }
-
-    public void debugRender(Graphics2D g) {
-        // float x = 0, y = 0, width, height;
-        // // for (int i = 0; i < gameObjects.size(); i++) {
-        // //     Vector3f pos = gameObjects.get(i).transform.position;
-        // //     Body body = bodies.get(i);
-
-        // //     x = pos.x + body.getPosition().x;
-
-
-        // // }
-        // for (int i = 0; i < gameObjects.size(); i++) {
-        //     Vector3f pos = gameObjects.get(i).transform.position;
-        //     Body body = bodies.get(i);
-
-        //     x = (pos.x * Window.Scale() * Const.O_SCALE) + (body.getPosition().x * Window.Scale() * Const.O_SCALE) + (Window.Width() / 2);
-        //     y = (pos.y * Window.Scale() * Const.O_SCALE) + (body.getPosition().y * Window.Scale() * Const.O_SCALE);
-        // }
-        // g.setColor(Color.green);
-        // g.drawRect((int) x, (int) -y + (Window.Height() / 2), 10, 10);
-    }
-
 }

@@ -19,14 +19,16 @@ import java.awt.Color;
 public class Renderer {
 
     private final Vector4f DEFAULT_COLOR_VEC = new Vector4f(1f, 1f, 1f, 1f);
+    private float renderScale;
     private List<SpriteRenderer> spriteRenderers = new ArrayList<>();
-    private List<Collider> colliders = new ArrayList<>();
-
+    private List<Box2DCollider> colliders = new ArrayList<>();
+    public boolean debug = false;
 
     private BufferedImage currentFrame;
 
     public Renderer() {
         currentFrame = new BufferedImage((int) Window.Width(), (int) Window.Height(), BufferedImage.TYPE_INT_ARGB);
+        renderScale = Window.Scale() * Const.O_SCALE;
     }
 
     private void updateFrame() {
@@ -66,53 +68,49 @@ public class Renderer {
             }
             
             // create the image frame to be rendered
-            for (SpriteRenderer spr : spriteRenderers) {
+            for (int i = 0; i < spriteRenderers.size(); i++) {
+                SpriteRenderer spr = spriteRenderers.get(i);
                 BufferedImage imageTemp = spr.getLastSpriteImg();
                 Vector3f position = spr.gameObject.transform.position;
                 Vector2f scale = spr.gameObject.transform.scale;
-    
-                int width = (int) (imageTemp.getWidth() * scale.x * Window.Scale() * Const.O_SCALE);
-                int height = (int) (imageTemp.getHeight() * scale.y * Window.Scale() * Const.O_SCALE);
-                int x = (int) Math.round(position.x * Window.Scale() * Const.O_SCALE);
-                int y = (int) -(Math.round((position.z * Window.Scale() * Const.O_SCALE) + (position.y * Window.Scale() * Const.O_SCALE) + height));
-    
+                float rotation = spr.gameObject.transform.rotation;
+                
+                float newX = Math.round(position.x), newY = Math.round(position.y), newZ = Math.round(position.z);
+
+                int width = (int) (imageTemp.getWidth() * scale.x * renderScale);
+                int height = (int) (imageTemp.getHeight() * scale.y * renderScale);
+                int x = (int) ((newX - (float) (imageTemp.getWidth() / 2f)) * renderScale);
+                int y = (int) -((newZ + newY + (float) (imageTemp.getHeight() / 2f)) * renderScale);
+
                 if (!spr.getColorVec().equals(DEFAULT_COLOR_VEC)) {
                     imageTemp = GameUtils.SetImageColor(imageTemp, spr.getColorVec());
                 }
                 g2d.drawImage(imageTemp, x, y, width, height, null);
 
-                // g2d.setColor(Color.red);
-                // g2d.drawRect(x, y, width, height);
+                if (debug) {
+                    Box2DCollider collider;
+                    if ((collider = colliders.get(i)) != null) {
+                        Vector2f origin = collider.getOrigin();
+                        Vector2f size = collider.getHalfSize();
+    
+                        int halfWidth = (int) ((size.x / 2f) * scale.x * renderScale);
+                        int halfHeight = (int) ((size.y / 2f) * scale.y * renderScale);
+                        int fullWidth = (int) (size.x * scale.x * renderScale);
+                        int fullHeight = (int) (size.y * scale.y * renderScale);
+                        int offsetX = (int) (origin.x * scale.x * renderScale);
+                        int offsetY = (int) (origin.y * scale.y * renderScale);
+                        int centerX = x + (width / 2);
+                        int centerY = y + (height / 2);
+                        int finalX = centerX - halfWidth - offsetX;
+                        int finalY = centerY - halfHeight - offsetY;
+                        
+                        g2d.setColor(Color.red);
+                        DebugDraw.drawRect(g2d, finalX, finalY, fullWidth, fullHeight, rotation);
+                    }
+                }
+
             }
 
-            // for (int i = 0; i < spriteRenderers.size(); i++) {
-            //     SpriteRenderer spr = spriteRenderers.get(i);
-            //     BufferedImage imageTemp = spr.getLastSpriteImg();
-            //     Vector3f position = spr.gameObject.transform.position;
-            //     Vector2f scale = spr.gameObject.transform.scale;
-    
-            //     int width = (int) (imageTemp.getWidth() * scale.x * Window.Scale() * Const.O_SCALE);
-            //     int height = (int) (imageTemp.getHeight() * scale.y * Window.Scale() * Const.O_SCALE);
-            //     int x = (int) (position.x * Window.Scale() * Const.O_SCALE);
-            //     int y = (int) -((position.z * Window.Scale() * Const.O_SCALE) + (position.y * Window.Scale() * Const.O_SCALE) + height);
-    
-            //     if (!spr.getColorVec().equals(DEFAULT_COLOR_VEC)) {
-            //         imageTemp = GameUtils.SetImageColor(imageTemp, spr.getColorVec());
-            //     }
-            //     g2d.drawImage(imageTemp, x, y, width, height, null);
-
-            //     // Box2DCollider collider;
-            //     // if ((collider = (Box2DCollider) colliders.get(i)) != null) {
-            //     //     int xC = (int) ((position.x * scale.x * Window.Scale() * Const.O_SCALE) + collider.getOrigin().x);
-            //     //     int yC = (int) -((position.y + collider.getOrigin().y) * scale.x * Window.Scale() * Const.O_SCALE);
-
-            //     //     // System.out.println(collider.getOrigin().x);
-
-            //     //     g2d.setColor(Color.red);
-            //     //     g2d.drawRect(xC, yC - height, width, height);
-            //     // }
-            // }
-     
             g2d.dispose();
         }
     }
@@ -122,15 +120,14 @@ public class Renderer {
 
         g.drawImage(currentFrame, 0, 0, Window.Width(), Window.Height(), null);
 
-        // g.setColor(Color.RED);
-        // g.drawRect(Window.Width() / 2, Window.Height() / 2, 10, 10);
-        // g.drawRect(0, 0 / 2, 10, 10);
-        // g.drawRect(Window.Width() / 4, Window.Height() / 4, 10, 10);
-        // g.dispose();
+        g.setColor(Color.RED);
+        g.drawRect(Window.Width() / 2, Window.Height() / 2, 10, 10);
     }
 
     private void sortSprites() {
-        Collections.sort(spriteRenderers);
+        if (!debug) {
+            Collections.sort(spriteRenderers);
+        }
     }
 
     public void add(GameObject go) {
@@ -143,7 +140,7 @@ public class Renderer {
     }
 
     private void addCollider(GameObject go) {
-        Box2DCollider collider = (Box2DCollider) go.getComponent(Collider.class);
+        Box2DCollider collider = go.getComponent(Box2DCollider.class);
         if(collider != null) {
             colliders.add(collider);
         }

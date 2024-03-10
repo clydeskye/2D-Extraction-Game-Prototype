@@ -7,11 +7,11 @@ import game.Window;
 public class DebugKeyTrigger extends Component {
     
     private int key;
+    private String filename;
 
-
-
-    public DebugKeyTrigger(int keyEvent) {
+    public DebugKeyTrigger(int keyEvent, String filename) {
         this.key = keyEvent;
+        this.filename = filename;
     }
 
     @Override
@@ -24,7 +24,7 @@ public class DebugKeyTrigger extends Component {
     public void trigger() {
         System.out.println("Resetting");
         Window.getCurrentScene().destroy();
-        Window.getCurrentScene().laod("physics");
+        Window.getCurrentScene().laod(filename);
     }
 
 }

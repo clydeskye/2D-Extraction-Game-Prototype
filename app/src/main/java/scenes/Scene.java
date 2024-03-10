@@ -35,6 +35,9 @@ public class Scene {
         this.renderer = new Renderer();
         this.gameObjects = new ArrayList<>();
         this.isRunning = false;
+
+
+        renderer.debug = false;
     }
 
     public void init() {
@@ -122,7 +125,6 @@ public class Scene {
 
     public void render(Graphics2D g) {
         this.renderer.render(g);
-        // this.physics2d.debugRender(g);
     }
 
     public Camera camera() {

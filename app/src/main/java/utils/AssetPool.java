@@ -24,7 +24,6 @@ import java.io.File;
 
 public class AssetPool {
 
-    // private static Map<String, Shader> shaders = new HashMap<>();
     private static Map<String, Texture> textures = new HashMap<>();
     private static Map<String, Spritesheet> spritesheets = new HashMap<>();
     private static Map<String, Sound> sounds = new HashMap<>();
@@ -53,21 +52,6 @@ public class AssetPool {
 		}
 		return img;
 	}
-
-    // public static Shader getShader(String resourceName) {
-    //     File file = new File(resourceName);
-        
-    //     // System.out.println("PATH: " + file.getAbsolutePath());
-        
-    //     if(AssetPool.shaders.containsKey(file.getAbsolutePath())) {
-    //         return AssetPool.shaders.get(file.getAbsolutePath());
-    //     } else {
-    //         Shader shader = new Shader(resourceName);
-    //         shader.compile();
-    //         AssetPool.shaders.put(file.getAbsolutePath(), shader);
-    //         return shader;
-    //     }
-    // }
 
     public static Texture getTexture(String resourceName) {
         File file = new File(resourceName);

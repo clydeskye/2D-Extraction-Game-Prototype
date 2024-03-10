@@ -6,26 +6,11 @@
     "isDead": false,
     "components": [
       {
-        "type": "components.Transform",
-        "properties": {
-          "position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "scale": {
-            "x": 0.0,
-            "y": 0.0
-          },
-          "rotation": 0.0,
-          "uid": 0
-        }
-      },
-      {
         "type": "components.debug.DebugKeyTrigger",
         "properties": {
           "key": 8,
-          "uid": 1
+          "filename": "physics",
+          "uid": 0
         }
       }
     ]
@@ -316,8 +301,8 @@
             },
             "width": 16,
             "height": 16,
-            "x": 16,
-            "y": 0
+            "x": 48,
+            "y": 48
           },
           "uid": 7
         }
@@ -740,8 +725,8 @@
             "y": 27.0
           },
           "origin": {
-            "x": 8.0,
-            "y": 5.5
+            "x": 0.0,
+            "y": -2.5
           },
           "offset": {
             "x": 0.0,
@@ -868,11 +853,11 @@
           "sprite": {
             "texture": {
               "filepath": "app/assets/sprites/Book.png",
-              "width": 11,
-              "height": 13
+              "width": 12,
+              "height": 14
             },
-            "width": 11,
-            "height": 13,
+            "width": 12,
+            "height": 14,
             "x": 0,
             "y": 0
           },
@@ -887,8 +872,8 @@
             "y": 13.0
           },
           "origin": {
-            "x": 0.0,
-            "y": -1.5
+            "x": -0.5,
+            "y": -0.5
           },
           "offset": {
             "x": 0.0,
