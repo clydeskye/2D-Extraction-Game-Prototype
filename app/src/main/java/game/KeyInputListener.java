@@ -1,6 +1,7 @@
 package game;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Arrays;
 
 public class KeyInputListener implements KeyListener {
 
@@ -72,7 +73,13 @@ public class KeyInputListener implements KeyListener {
 		get().buttonsState[e.getKeyCode()] = false;
 		get().buttonsHoldTime[e.getKeyCode()] = -1;
     }
+
     public void update() {
         
+    }
+
+	public static void endFrame() {
+        Arrays.fill(get().buttonsState, false);
+		Arrays.fill(get().buttonsHoldTime, 0);
     }
 }

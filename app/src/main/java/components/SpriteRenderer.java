@@ -11,7 +11,7 @@ public class SpriteRenderer extends Component implements Comparable<SpriteRender
     private boolean isDirty = true;
     private Sprite sprite;
     private transient Transform transform;
-    private transient boolean rotationChanged = false, scaleChanged = false, yPosChanged = false;
+    private transient boolean rotationChanged = false, scaleChanged = false, zPosChanged = false;
 
     @Override
     public void start() {
@@ -25,8 +25,8 @@ public class SpriteRenderer extends Component implements Comparable<SpriteRender
                 rotationChanged = true;
                 isDirty = true;
             }
-            if (!this.transform.equalsYPos(this.gameObject.transform)) {
-                rotationChanged = true;
+            if (!this.transform.equalsZPos(this.gameObject.transform)) {
+                zPosChanged = true;
                 isDirty = true;
             }
             // if (!this.transform.equalsScale(this.gameObject.transform)) {
@@ -83,19 +83,19 @@ public class SpriteRenderer extends Component implements Comparable<SpriteRender
         return this.rotationChanged;
     }
 
-    public boolean isYPosChanged() {
-        return this.yPosChanged;
+    public boolean isZPosChanged() {
+        return this.zPosChanged;
     }
 
     public void unflagDirty() {
         this.isDirty = false;
         this.rotationChanged = false;
         this.scaleChanged = false;
-        this.yPosChanged = false;
+        this.zPosChanged = false;
     }
 
     @Override
     public int compareTo(SpriteRenderer o) {
-        return (this.gameObject.transform.position.y < o.gameObject.transform.position.y) ? -1 : ((this.gameObject.transform.position.y == o.gameObject.transform.position.y) ? 0 : 1);
+        return (this.gameObject.transform.zIndex < o.gameObject.transform.zIndex) ? -1 : ((this.gameObject.transform.zIndex == o.gameObject.transform.zIndex) ? 0 : 1);
     }
 }

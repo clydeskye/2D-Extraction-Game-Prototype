@@ -80,10 +80,10 @@ public class GameObject {
         return this.uid;
     }
 
-    public List<Component> getAllComponenets() {
+    public List<Component> getAllComponents() {
         return this.components;
     }
-
+    
     public void setSerialize(Boolean bool) {
         this.doSerialization = bool;
     }
@@ -126,7 +126,7 @@ public class GameObject {
         GameObject obj = gson.fromJson(objAsJson, GameObject.class);
         obj.generateUid();
 
-        for (Component c : obj.getAllComponenets()) {
+        for (Component c : obj.getAllComponents()) {
             c.generateId();
         }
         SpriteRenderer sprite = obj.getComponent(SpriteRenderer.class);
@@ -135,4 +135,5 @@ public class GameObject {
         }
         return obj;
     }
+
 }

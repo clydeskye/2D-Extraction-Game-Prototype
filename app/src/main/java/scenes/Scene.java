@@ -181,7 +181,7 @@ public class Scene {
             for(int i = 0; i < objs.length; i++) {
                 addGameObjectToScene(objs[i]);
 
-                for(Component c : objs[i].getAllComponenets()) {
+                for(Component c : objs[i].getAllComponents()) {
                     if(c.getUid() > maxCompId) {
                         maxCompId = c.getUid();
                     }
@@ -215,5 +215,9 @@ public class Scene {
             System.out.println(go);
         }
         System.out.println("==============================");
+    }
+
+    public Physics2D getPhysics() {
+        return this.physics2d;
     }
 }

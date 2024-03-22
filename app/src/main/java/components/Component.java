@@ -1,4 +1,7 @@
 package components;
+import org.jbox2d.dynamics.contacts.Contact;
+import org.joml.Vector2f;
+
 import game.GameObject;
 
 public abstract class Component {
@@ -55,5 +58,21 @@ public abstract class Component {
 
     public void destroy() {
  
+    }
+
+    public void beginCollision(GameObject collidingObject, Contact contact, Vector2f hitNormal) {
+
+    }
+
+    public void endCollision(GameObject collidingObject, Contact contact, Vector2f hitNormal) {
+
+    }
+
+    public void preSolve(GameObject collidingObject, Contact contact, Vector2f hitNormal) {
+
+    }
+
+    public void postSolve(GameObject collidingObject, Contact contact, Vector2f hitNormal) {
+
     }
 }

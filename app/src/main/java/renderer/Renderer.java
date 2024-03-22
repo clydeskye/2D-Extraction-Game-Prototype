@@ -52,7 +52,7 @@ public class Renderer {
                         imageTemp = GameUtils.RotateImage(imageTemp, spr.gameObject.transform.rotation);
                     }
     
-                    if (spr.isYPosChanged()) {
+                    if (spr.isZPosChanged()) {
                         isSortSprites = true;
                     }
     
@@ -71,11 +71,12 @@ public class Renderer {
             for (int i = 0; i < spriteRenderers.size(); i++) {
                 SpriteRenderer spr = spriteRenderers.get(i);
                 BufferedImage imageTemp = spr.getLastSpriteImg();
-                Vector3f position = spr.gameObject.transform.position;
+                Vector2f position = spr.gameObject.transform.position;
+                float zIndex = spr.gameObject.transform.zIndex;
                 Vector2f scale = spr.gameObject.transform.scale;
                 float rotation = spr.gameObject.transform.rotation;
                 
-                float newX = Math.round(position.x), newY = Math.round(position.y), newZ = Math.round(position.z);
+                float newX = Math.round(position.x), newY = Math.round(position.y), newZ = Math.round(zIndex);
 
                 int width = (int) (imageTemp.getWidth() * scale.x * renderScale);
                 int height = (int) (imageTemp.getHeight() * scale.y * renderScale);

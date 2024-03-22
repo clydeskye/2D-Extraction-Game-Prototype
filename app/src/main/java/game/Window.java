@@ -4,8 +4,17 @@ import javax.swing.JPanel;
 
 import org.lwjgl.openal.*;
 
+import physics2d.Physics2D;
 import scenes.*;
 import utils.AssetPool;
+
+import static org.lwjgl.openal.ALC10.ALC_DEFAULT_DEVICE_SPECIFIER;
+import static org.lwjgl.openal.ALC10.alcCloseDevice;
+import static org.lwjgl.openal.ALC10.alcCreateContext;
+import static org.lwjgl.openal.ALC10.alcDestroyContext;
+import static org.lwjgl.openal.ALC10.alcGetString;
+import static org.lwjgl.openal.ALC10.alcMakeContextCurrent;
+import static org.lwjgl.openal.ALC10.alcOpenDevice;
 import static org.lwjgl.openal.ALC11.*;
 
 import java.awt.Graphics;
@@ -43,7 +52,7 @@ public class Window extends JPanel implements Runnable {
     private void initClasses() {
         changeScene(new PhysTestLevelInitializer());
     }
-    
+
     private void update(float dt) {
         currentScene.update(dt);
     }
@@ -53,7 +62,7 @@ public class Window extends JPanel implements Runnable {
     }
 
     public static Scene getCurrentScene() {
-        return get().currentScene;
+        return currentScene;
     }
 
     public static void changeScene(SceneInitializer sceneInitializer) {
@@ -192,6 +201,10 @@ public class Window extends JPanel implements Runnable {
 
         destroy();
         System.exit(0);
+    }
+
+    public static Physics2D getPhysics() {
+        return currentScene.getPhysics();
     }
 
     public static int Width() {

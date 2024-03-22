@@ -27,7 +27,8 @@ public class Prefabs {
 
         // Create GameObject & add components
         GameObject block = Window.getCurrentScene().createGameObject("Debug Block");
-        block.transform.position = new Vector3f(x, y, z);
+        block.transform.position = new Vector2f(x, y);
+        block.transform.zIndex = z;
         block.transform.scale = new Vector2f(1f, 1f);
         block.addComponent(spriteRenderer);
         block.addComponent(collider);
@@ -74,8 +75,7 @@ public class Prefabs {
         Box2DCollider collider = new Box2DCollider();
 
         collider.setHalfSize(new Vector2f(14f, 27f));
-        collider.setOrigin(new Vector2f(0f, -2.5f));
-
+        collider.setOffset(new Vector2f(0f, -2.5f));
 
         Rigidbody2D body = new Rigidbody2D();
         body.setBodyType(BodyType.Dynamic);
