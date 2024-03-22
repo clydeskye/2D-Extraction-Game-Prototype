@@ -22,9 +22,8 @@ public class PhysTestLevelInitializer extends SceneInitializer{
 
     @Override
     public void init(Scene scene) {
-
         scene.laod("physics");
-
+        
         // scene.save("physics2");
     }
 

@@ -4,12 +4,8 @@ import javax.swing.JPanel;
 
 import org.lwjgl.openal.*;
 
-import scenes.PhysTestLevelInitializer;
-import scenes.Scene;
-import scenes.SceneInitializer;
-import scenes.TestLevelInitializer;
+import scenes.*;
 import utils.AssetPool;
-
 import static org.lwjgl.openal.ALC11.*;
 
 import java.awt.Graphics;
@@ -18,19 +14,18 @@ import java.awt.Dimension;
 
 public class Window extends JPanel implements Runnable {
     
-    public final static int UPS_SET = 100;
+    public final static int UPS_SET = 60;
 	public final static int WINDOW_WIDTH_DEFAULT = 320, WINDOW_HEIGHT_DEFAULT = 180;	
-    private float dt = 1f / ((float) UPS_SET);
-    
+
     private static Window window;
     private JFrame jFrame;
     private Thread thread;
-    private double gameTime;
     private static int FPS_SET;
     private static float GameScale;
 	private static int WindowWidth, WindowHeight;
     private static Dimension windowSize;
     private boolean windowLoop;
+    private float dt, absDt = 1f / (float) UPS_SET;
 
     private long audioContext, audioDevice;
 
@@ -48,8 +43,7 @@ public class Window extends JPanel implements Runnable {
     private void initClasses() {
         changeScene(new PhysTestLevelInitializer());
     }
-
-    private int timerTest = 0;
+    
     private void update(float dt) {
         currentScene.update(dt);
     }
@@ -168,21 +162,30 @@ public class Window extends JPanel implements Runnable {
     @Override
     public void run() {
         double timePerFrame = 1000000000.0 / FPS_SET, timePerUpdate = 1000000000.0 / UPS_SET, deltaU = 0, deltaF = 0;
-        long previousTime = System.nanoTime(), lastCheck = System.currentTimeMillis();
-        int frames = 0, updates = 0;
+        long previousTime = System.nanoTime(), lastCheck = System.currentTimeMillis(), previousUTime = System.nanoTime();
+        // int frames = 0, updates = 0;
         while(windowLoop) {
             long currentTime = System.nanoTime();
             deltaU += (currentTime - previousTime) / timePerUpdate;
             deltaF += (currentTime - previousTime) / timePerFrame;
             previousTime = currentTime;
+            // if(System.currentTimeMillis() - lastCheck >= 1000) {
+            //     lastCheck = System.currentTimeMillis();
+            //     System.out.println("FPS: " + frames + " | UPS: " + updates + " | DT: " + dt + " (" + absDt + ")");
+            //     frames = 0;
+            //     updates = 0;
+            // }
             if(deltaU >= 1) {
+                long currentUTime = System.nanoTime();
+                dt =  (float) (currentUTime - previousUTime) / 1000000000.0f;
                 update(dt);
-                updates++;
+                // updates++;
+                previousUTime = currentUTime;
                 deltaU--;
             }
             if(deltaF >= 1) {
                 repaint();
-                frames++;
+                // frames++;
                 deltaF--;
             }
         }
