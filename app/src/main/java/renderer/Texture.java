@@ -22,7 +22,7 @@ public class Texture {
 	
 	public void setFilepath(String filepath) {
 		this.filepath = filepath;
-		this.imgTexture = AssetPool.GetSpriteAtlas(filepath);
+		this.imgTexture = AssetPool.Utils.GetSpriteAtlas(filepath);
 		this.width = imgTexture.getWidth();
 		this.height = imgTexture.getHeight();
 	}
@@ -33,7 +33,7 @@ public class Texture {
 
 	public BufferedImage getImgTexture() {
 		if (imgTexture == null) {
-			this.imgTexture = AssetPool.GetSpriteAtlas(filepath);
+			this.imgTexture = AssetPool.Utils.GetSpriteAtlas(filepath);
 			this.width = imgTexture.getWidth();
 			this.height = imgTexture.getHeight();	
 		}

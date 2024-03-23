@@ -34,24 +34,32 @@ public class AssetPool {
         sounds.clear();
     }
 
-    public static BufferedImage GetSpriteAtlas(String filename) {
-		BufferedImage img = null;
+    public class Utils {
+        public static BufferedImage GetSpriteAtlas(String filename) {
+            BufferedImage img = null;
+    
+            // InputStream is = AssetPool.class.getResourceAsStream(filename);
+            File file = new File(filename);
+            try {
+                img = ImageIO.read(file);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                // try {
+                // 	is.close();
+                // } catch(IOException e) {
+                // 	e.printStackTrace();
+                // }
+            }
+            return img;
+        }
 
-		// InputStream is = AssetPool.class.getResourceAsStream(filename);
-        File file = new File(filename);
-		try {
-			img = ImageIO.read(file);
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			// try {
-			// 	is.close();
-			// } catch(IOException e) {
-			// 	e.printStackTrace();
-			// }
-		}
-		return img;
-	}
+        public static void GetAllAssets(String sourceFolder) {
+
+        }
+
+    }
+
 
     public static Texture getTexture(String resourceName) {
         File file = new File(resourceName);

@@ -19,6 +19,7 @@ public class Physics2D {
         private float physicsTimeStep = 1.0f / 60.0f;
         private int velocityIterations = 8;
         private int positionIterations = 3;
+
         public void add(GameObject go) {
             Rigidbody2D rb = go.getComponent(Rigidbody2D.class);
             if (rb != null && rb.getRawBody() == null) {
@@ -153,6 +154,13 @@ public class Physics2D {
         fixtureDef.userData = circleCollider.gameObject;
         fixtureDef.isSensor = rb.isSensor();
         body.createFixture(fixtureDef);
+    }
+
+    public RaycastInfo raycast(GameObject requestingObject, Vector2f point1, Vector2f point2) {
+        RaycastInfo callback = new RaycastInfo(requestingObject);
+        world.raycast(callback, new Vec2(point1.x, point1.y),
+                new Vec2(point2.x, point2.y));
+        return callback;
     }
 
     private int fixtureListSize(Body body) {

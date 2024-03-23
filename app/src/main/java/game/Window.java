@@ -8,13 +8,6 @@ import physics2d.Physics2D;
 import scenes.*;
 import utils.AssetPool;
 
-import static org.lwjgl.openal.ALC10.ALC_DEFAULT_DEVICE_SPECIFIER;
-import static org.lwjgl.openal.ALC10.alcCloseDevice;
-import static org.lwjgl.openal.ALC10.alcCreateContext;
-import static org.lwjgl.openal.ALC10.alcDestroyContext;
-import static org.lwjgl.openal.ALC10.alcGetString;
-import static org.lwjgl.openal.ALC10.alcMakeContextCurrent;
-import static org.lwjgl.openal.ALC10.alcOpenDevice;
 import static org.lwjgl.openal.ALC11.*;
 
 import java.awt.Graphics;
@@ -35,14 +28,12 @@ public class Window extends JPanel implements Runnable {
     private static Dimension windowSize;
     private boolean windowLoop;
     private float dt, absDt = 1f / (float) UPS_SET;
-
     private long audioContext, audioDevice;
-
     private static Scene currentScene;
 
     public Window() {
         windowLoop = true;
-        FPS_SET = 60;
+        FPS_SET = 40;
         GameScale = 5.0f;
         WindowWidth = (int) (WINDOW_WIDTH_DEFAULT * GameScale);
         WindowHeight = (int) (WINDOW_HEIGHT_DEFAULT * GameScale);
