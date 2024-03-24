@@ -1,14 +1,12 @@
 package renderer;
 
 import game.*;
-import physics2d.components.Box2DCollider;
-import physics2d.components.Collider;
+import physics2d.components.*;
 import components.*;
 import utils.*;
 import java.util.*;
 import javax.imageio.ImageIO;
 import org.joml.Vector2f;
-import org.joml.Vector3f;
 import org.joml.Vector4f;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -80,8 +78,8 @@ public class Renderer {
 
                 int width = (int) (imageTemp.getWidth() * scale.x * renderScale);
                 int height = (int) (imageTemp.getHeight() * scale.y * renderScale);
-                int x = (int) ((newX - (float) (imageTemp.getWidth() / 2f)) * renderScale);
-                int y = (int) -((newZ + newY + (float) (imageTemp.getHeight() / 2f)) * renderScale);
+                int x = (int) ((newX - (float) ((imageTemp.getWidth() * scale.x) / 2f)) * renderScale);
+                int y = (int) -((newZ + newY + (float) ((imageTemp.getHeight() * scale.y) / 2f)) * renderScale);
 
                 if (!spr.getColorVec().equals(DEFAULT_COLOR_VEC)) {
                     imageTemp = GameUtils.SetImageColor(imageTemp, spr.getColorVec());
@@ -137,7 +135,7 @@ public class Renderer {
             spriteRenderers.add(spr);
             sortSprites();
         }
-        addCollider(go);
+        // addCollider(go);
     }
 
     private void addCollider(GameObject go) {

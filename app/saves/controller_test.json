@@ -1,0 +1,3440 @@
+[
+  {
+    "uid": 0,
+    "name": "Trigger",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.debug.DebugKeyTrigger",
+        "properties": {
+          "key": 8,
+          "filename": "controller_test",
+          "uid": 0
+        }
+      }
+    ]
+  },
+  {
+    "uid": 1,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": -144.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 1
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 2
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 3
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 4
+        }
+      }
+    ]
+  },
+  {
+    "uid": 2,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": -128.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 5
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 6
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 7
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 8
+        }
+      }
+    ]
+  },
+  {
+    "uid": 3,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": -112.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 9
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 10
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 11
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 12
+        }
+      }
+    ]
+  },
+  {
+    "uid": 4,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": -96.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 13
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 14
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 15
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 16
+        }
+      }
+    ]
+  },
+  {
+    "uid": 5,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": -80.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 17
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 18
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 19
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 20
+        }
+      }
+    ]
+  },
+  {
+    "uid": 6,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": -64.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 21
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 22
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 23
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 24
+        }
+      }
+    ]
+  },
+  {
+    "uid": 7,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": -48.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 25
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 26
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 27
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 28
+        }
+      }
+    ]
+  },
+  {
+    "uid": 8,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": -32.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 29
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 30
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 31
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 32
+        }
+      }
+    ]
+  },
+  {
+    "uid": 9,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": -16.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 33
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 34
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 35
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 36
+        }
+      }
+    ]
+  },
+  {
+    "uid": 10,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 0.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 37
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 38
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 39
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 40
+        }
+      }
+    ]
+  },
+  {
+    "uid": 11,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 16.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 41
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 42
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 43
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 44
+        }
+      }
+    ]
+  },
+  {
+    "uid": 12,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 32.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 45
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 46
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 47
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 48
+        }
+      }
+    ]
+  },
+  {
+    "uid": 13,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 48.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 49
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 50
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 51
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 52
+        }
+      }
+    ]
+  },
+  {
+    "uid": 14,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 64.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 53
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 54
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 55
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 56
+        }
+      }
+    ]
+  },
+  {
+    "uid": 15,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 80.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 57
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 58
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 59
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 60
+        }
+      }
+    ]
+  },
+  {
+    "uid": 16,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 96.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 61
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 62
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 63
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 64
+        }
+      }
+    ]
+  },
+  {
+    "uid": 17,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 112.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 65
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 66
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 67
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 68
+        }
+      }
+    ]
+  },
+  {
+    "uid": 18,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 128.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 69
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 70
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 71
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 72
+        }
+      }
+    ]
+  },
+  {
+    "uid": 19,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 144.0,
+            "y": -80.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 73
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 74
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 75
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 76
+        }
+      }
+    ]
+  },
+  {
+    "uid": 20,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": -144.0,
+            "y": -64.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 77
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 78
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 79
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 80
+        }
+      }
+    ]
+  },
+  {
+    "uid": 21,
+    "name": "Debug Block",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 144.0,
+            "y": -64.0
+          },
+          "zIndex": 0.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 81
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/terrain/ground/Dungeon_floor_sprites.png",
+              "width": 96,
+              "height": 160
+            },
+            "width": 16,
+            "height": 16,
+            "x": 64,
+            "y": 32
+          },
+          "uid": 82
+        }
+      },
+      {
+        "type": "physics2d.components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 16.0,
+            "y": 16.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 83
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 84
+        }
+      }
+    ]
+  },
+  {
+    "uid": 22,
+    "name": "Blue Soldier",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 0.0,
+            "y": 70.0
+          },
+          "zIndex": 1.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 85
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+              "width": 384,
+              "height": 144
+            },
+            "width": 48,
+            "height": 48,
+            "x": 0,
+            "y": 0
+          },
+          "uid": 86
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Jump",
+                "trigger": "stopJumping"
+              },
+              "Idle"
+            ],
+            [
+              {
+                "state": "Run",
+                "trigger": "stopRunning"
+              },
+              "Idle"
+            ],
+            [
+              {
+                "state": "Idle",
+                "trigger": "startRunning"
+              },
+              "Run"
+            ],
+            [
+              {
+                "state": "Idle",
+                "trigger": "die"
+              },
+              "Death"
+            ],
+            [
+              {
+                "state": "Jump",
+                "trigger": "die"
+              },
+              "Death"
+            ],
+            [
+              {
+                "state": "Idle",
+                "trigger": "crouch"
+              },
+              "Crouch"
+            ],
+            [
+              {
+                "state": "Crouch",
+                "trigger": "die"
+              },
+              "Death"
+            ],
+            [
+              {
+                "state": "Run",
+                "trigger": "jump"
+              },
+              "Jump"
+            ],
+            [
+              {
+                "state": "Crouch",
+                "trigger": "stopCrouching"
+              },
+              "Idle"
+            ],
+            [
+              {
+                "state": "Idle",
+                "trigger": "jump"
+              },
+              "Jump"
+            ],
+            [
+              {
+                "state": "Run",
+                "trigger": "die"
+              },
+              "Death"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Run",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 96,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 144,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 192,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 240,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 288,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 336,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Idle",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 0,
+                    "y": 0
+                  },
+                  "frameTime": 0.2
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 48,
+                    "y": 0
+                  },
+                  "frameTime": 0.2
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 96,
+                    "y": 0
+                  },
+                  "frameTime": 0.2
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 144,
+                    "y": 0
+                  },
+                  "frameTime": 0.2
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 192,
+                    "y": 0
+                  },
+                  "frameTime": 0.2
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Jump",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 0,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 48,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            },
+            {
+              "title": "Death",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 0,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 48,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 96,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 144,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 192,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 240,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 288,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 336,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            },
+            {
+              "title": "Crouch",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 240,
+                    "y": 0
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 288,
+                    "y": 0
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Blue_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 336,
+                    "y": 0
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Idle",
+          "uid": 87
+        }
+      },
+      {
+        "type": "physics2d.components.PillboxCollider",
+        "properties": {
+          "width": 10.0,
+          "height": 58.0,
+          "offset": {
+            "x": 0.0,
+            "y": 1.0
+          },
+          "uid": 88
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 50.0,
+          "bodyType": "Dynamic",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 89
+        }
+      },
+      {
+        "type": "components.PlayerController",
+        "properties": {
+          "walkSpeed": 100.0,
+          "jumpBoost": 1.0,
+          "jumpImpulse": 3.0,
+          "slowDownForce": 60.0,
+          "terminalVelocity": {
+            "x": 130.0,
+            "y": 600.0
+          },
+          "uid": 90
+        }
+      }
+    ]
+  },
+  {
+    "uid": 23,
+    "name": "Green Soldier",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": 120.0,
+            "y": 70.0
+          },
+          "zIndex": 1.0,
+          "scale": {
+            "x": -1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 91
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+              "width": 384,
+              "height": 144
+            },
+            "width": 48,
+            "height": 48,
+            "x": 0,
+            "y": 0
+          },
+          "uid": 92
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Jump",
+                "trigger": "stopJumping"
+              },
+              "Idle"
+            ],
+            [
+              {
+                "state": "Run",
+                "trigger": "stopRunning"
+              },
+              "Idle"
+            ],
+            [
+              {
+                "state": "Idle",
+                "trigger": "startRunning"
+              },
+              "Run"
+            ],
+            [
+              {
+                "state": "Idle",
+                "trigger": "die"
+              },
+              "Death"
+            ],
+            [
+              {
+                "state": "Jump",
+                "trigger": "die"
+              },
+              "Death"
+            ],
+            [
+              {
+                "state": "Idle",
+                "trigger": "crouch"
+              },
+              "Crouch"
+            ],
+            [
+              {
+                "state": "Crouch",
+                "trigger": "die"
+              },
+              "Death"
+            ],
+            [
+              {
+                "state": "Run",
+                "trigger": "jump"
+              },
+              "Jump"
+            ],
+            [
+              {
+                "state": "Crouch",
+                "trigger": "stopCrouching"
+              },
+              "Idle"
+            ],
+            [
+              {
+                "state": "Idle",
+                "trigger": "jump"
+              },
+              "Jump"
+            ],
+            [
+              {
+                "state": "Run",
+                "trigger": "die"
+              },
+              "Death"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Run",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 96,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 144,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 192,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 240,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 288,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 336,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Idle",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 0,
+                    "y": 0
+                  },
+                  "frameTime": 0.2
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 48,
+                    "y": 0
+                  },
+                  "frameTime": 0.2
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 96,
+                    "y": 0
+                  },
+                  "frameTime": 0.2
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 144,
+                    "y": 0
+                  },
+                  "frameTime": 0.2
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 192,
+                    "y": 0
+                  },
+                  "frameTime": 0.2
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Jump",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 0,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 48,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            },
+            {
+              "title": "Death",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 0,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 48,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 96,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 144,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 192,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 240,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 288,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 336,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            },
+            {
+              "title": "Crouch",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 240,
+                    "y": 0
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 288,
+                    "y": 0
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Green_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 336,
+                    "y": 0
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Idle",
+          "uid": 93
+        }
+      },
+      {
+        "type": "physics2d.components.PillboxCollider",
+        "properties": {
+          "width": 10.0,
+          "height": 58.0,
+          "offset": {
+            "x": 0.0,
+            "y": 1.0
+          },
+          "uid": 94
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 50.0,
+          "bodyType": "Dynamic",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 95
+        }
+      }
+    ]
+  },
+  {
+    "uid": 24,
+    "name": "Red Soldier",
+    "doSerialization": true,
+    "isDead": false,
+    "components": [
+      {
+        "type": "components.Transform",
+        "properties": {
+          "position": {
+            "x": -120.0,
+            "y": 70.0
+          },
+          "zIndex": 1.0,
+          "scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "rotation": 0.0,
+          "uid": 97
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "isDirty": true,
+          "sprite": {
+            "texture": {
+              "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+              "width": 384,
+              "height": 144
+            },
+            "width": 48,
+            "height": 48,
+            "x": 0,
+            "y": 0
+          },
+          "uid": 98
+        }
+      },
+      {
+        "type": "components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Jump",
+                "trigger": "stopJumping"
+              },
+              "Idle"
+            ],
+            [
+              {
+                "state": "Run",
+                "trigger": "stopRunning"
+              },
+              "Idle"
+            ],
+            [
+              {
+                "state": "Idle",
+                "trigger": "startRunning"
+              },
+              "Run"
+            ],
+            [
+              {
+                "state": "Idle",
+                "trigger": "die"
+              },
+              "Death"
+            ],
+            [
+              {
+                "state": "Jump",
+                "trigger": "die"
+              },
+              "Death"
+            ],
+            [
+              {
+                "state": "Idle",
+                "trigger": "crouch"
+              },
+              "Crouch"
+            ],
+            [
+              {
+                "state": "Crouch",
+                "trigger": "die"
+              },
+              "Death"
+            ],
+            [
+              {
+                "state": "Run",
+                "trigger": "jump"
+              },
+              "Jump"
+            ],
+            [
+              {
+                "state": "Crouch",
+                "trigger": "stopCrouching"
+              },
+              "Idle"
+            ],
+            [
+              {
+                "state": "Idle",
+                "trigger": "jump"
+              },
+              "Jump"
+            ],
+            [
+              {
+                "state": "Run",
+                "trigger": "die"
+              },
+              "Death"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Run",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 96,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 144,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 192,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 240,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 288,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 336,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Idle",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 0,
+                    "y": 0
+                  },
+                  "frameTime": 0.2
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 48,
+                    "y": 0
+                  },
+                  "frameTime": 0.2
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 96,
+                    "y": 0
+                  },
+                  "frameTime": 0.2
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 144,
+                    "y": 0
+                  },
+                  "frameTime": 0.2
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 192,
+                    "y": 0
+                  },
+                  "frameTime": 0.2
+                }
+              ],
+              "doesLoop": true
+            },
+            {
+              "title": "Jump",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 0,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 48,
+                    "y": 48
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            },
+            {
+              "title": "Death",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 0,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 48,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 96,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 144,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 192,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 240,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 288,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 336,
+                    "y": 96
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            },
+            {
+              "title": "Crouch",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 240,
+                    "y": 0
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 288,
+                    "y": 0
+                  },
+                  "frameTime": 0.1
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filepath": "app/assets/sprites/entities/Red_Soldier.png",
+                      "width": 384,
+                      "height": 144
+                    },
+                    "width": 48,
+                    "height": 48,
+                    "x": 336,
+                    "y": 0
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Idle",
+          "uid": 99
+        }
+      },
+      {
+        "type": "physics2d.components.PillboxCollider",
+        "properties": {
+          "width": 10.0,
+          "height": 58.0,
+          "offset": {
+            "x": 0.0,
+            "y": 1.0
+          },
+          "uid": 100
+        }
+      },
+      {
+        "type": "physics2d.components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 50.0,
+          "bodyType": "Dynamic",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": true,
+          "continuousCollision": false,
+          "uid": 101
+        }
+      }
+    ]
+  }
+]

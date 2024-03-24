@@ -14,6 +14,9 @@ public class Const {
         public static final String WIZZARD_IDLE = SPRITES_PARENT_FOLDER + "entities/wizzard/Idle-Sheet.png";
         public static final String ROGUE_IDLE = SPRITES_PARENT_FOLDER + "entities/rogue/Idle-Sheet.png";
         public static final String BOOK = SPRITES_PARENT_FOLDER + "Book.png";
+        public static final String GREEN_SOLDIER = SPRITES_PARENT_FOLDER + "entities/Green_Soldier.png";
+        public static final String BLUE_SOLDIER = SPRITES_PARENT_FOLDER + "entities/Blue_Soldier.png";
+        public static final String RED_SOLDIER = SPRITES_PARENT_FOLDER + "entities/Red_Soldier.png";
 
     }
 

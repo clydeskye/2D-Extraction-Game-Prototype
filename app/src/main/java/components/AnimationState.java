@@ -23,6 +23,21 @@ public class AnimationState {
         animationFrames.add(new Frame(sprite, frameTime));
     }
 
+    public void addFrameList(List<Sprite> sprites, float frameTime) {
+        for (Sprite sprite : sprites) {
+            addFrame(sprite, frameTime);
+        }
+    }
+
+    public void setFrames(List<Sprite> sprites, float frameTime) {
+        if (!animationFrames.isEmpty()) {
+            animationFrames.clear();
+        }
+        for (Sprite sprite : sprites) {
+            addFrame(sprite, frameTime);
+        }
+    }
+
     public void setLoop(boolean doesLoop) {
         this.doesLoop = doesLoop;
     }

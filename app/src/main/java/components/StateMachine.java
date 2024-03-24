@@ -5,20 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
-// import imgui.ImGui;
-// import imgui.type.ImBoolean;
-// import imgui.type.ImString;
-
-public class StateMachine extends Component{
-    
+public class StateMachine extends Component {
     private class StateTrigger {
         public String state;
         public String trigger;
 
         @SuppressWarnings("unused")
-        public StateTrigger() {
-
-        }
+        public StateTrigger() {}
 
         public StateTrigger(String state, String trigger) {
             this.state = state;
@@ -28,15 +21,14 @@ public class StateMachine extends Component{
         @Override
         public boolean equals(Object o) {
             if (o.getClass() != StateTrigger.class) return false;
-            StateTrigger t2 = (StateTrigger) o;
+            StateTrigger t2 = (StateTrigger)o;
             return t2.trigger.equals(this.trigger) && t2.state.equals(this.state);
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(trigger, state);
+            return Objects.hash(state, trigger);
         }
-        
     }
 
     public HashMap<StateTrigger, String> stateTransfers = new HashMap<>();
@@ -44,43 +36,39 @@ public class StateMachine extends Component{
     private transient AnimationState currentState = null;
     private String defaultStateTitle = "";
 
+    public void refreshTextures() {
+        for (AnimationState state : states) {
+            state.refreshTextures();
+        }
+    }
+
     public void setDefaultState(String animationTitle) {
         for (AnimationState state : states) {
             if (state.title.equals(animationTitle)) {
                 defaultStateTitle = animationTitle;
                 if (currentState == null) {
                     currentState = state;
-                    return;
                 }
+                return;
             }
         }
+
+        System.out.println("Unable to find default state '" + animationTitle + "'");
     }
 
-    public void setDefaultState(AnimationState state) {
-        setDefaultState(state.title);
+    public void addState(String from, String to, String onTrigger) {
+        this.stateTransfers.put(new StateTrigger(from, onTrigger), to);
     }
 
     public void addState(AnimationState state) {
         this.states.add(state);
     }
 
-    public void addStateTrigger(String from, String to, String onTrigger) {
-        this.stateTransfers.put(new StateTrigger(from, onTrigger), to);
-    }
-
     public void trigger(String trigger) {
         for (StateTrigger state : stateTransfers.keySet()) {
             if (state.state.equals(currentState.title) && state.trigger.equals(trigger)) {
                 if (stateTransfers.get(state) != null) {
-                    int newStateIndex = -1;
-                    int index = 0;
-                    for (AnimationState s : states) {
-                        if (s.title.equals(stateTransfers.get(state))) {
-                            newStateIndex = index;
-                            break;
-                        }
-                        index++;
-                    }
+                    int newStateIndex = stateIndexOf(stateTransfers.get(state));
                     if (newStateIndex > -1) {
                         currentState = states.get(newStateIndex);
                     }
@@ -88,12 +76,20 @@ public class StateMachine extends Component{
                 return;
             }
         }
+
+        // System.out.println("Unable to find trigger '" + trigger + "'");
     }
 
-    public void refreshTextures() {
+    private int stateIndexOf(String stateTitle) {
+        int index = 0;
         for (AnimationState state : states) {
-            state.refreshTextures();
+            if (state.title.equals(stateTitle)) {
+                return index;
+            }
+            index++;
         }
+
+        return -1;
     }
 
     @Override
@@ -117,14 +113,4 @@ public class StateMachine extends Component{
         }
     }
 
-    @Override
-    public void editorUpdate(float dt) {
-        if (currentState != null) {
-            currentState.update(dt);
-            SpriteRenderer sprite = gameObject.getComponent(SpriteRenderer.class);
-            if (sprite != null) {
-                sprite.setSprite(currentState.getCurrentSprite());
-            }
-        }
-    }
 }

@@ -50,8 +50,17 @@ public class Spritesheet {
         return this.sprites.get(index % size());
     }
 
-    public List<Sprite> getSpriteList() {
+    public List<Sprite> getAllSprites() {
         return this.sprites;
+    }
+
+    public List<Sprite> getSpecificSprites(int startingIndex, int numOfSprites) {
+        List<Sprite> newList = new ArrayList<>();
+
+        for (int i = startingIndex; i < (startingIndex + numOfSprites); i++) {
+            newList.add(sprites.get(i));
+        }
+        return newList;
     }
 
     public int size() {

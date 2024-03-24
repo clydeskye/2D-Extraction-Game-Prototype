@@ -22,9 +22,33 @@ public class PhysTestLevelInitializer extends SceneInitializer{
 
     @Override
     public void init(Scene scene) {
-        scene.laod("physics");
+        scene.laod("controller_test");
+
+        // GameObject trigger = new GameObject("Trigger");
+        // DebugKeyTrigger reset = new DebugKeyTrigger(KeyEvent.VK_BACK_SPACE, "controller");
+        // trigger.addComponent(reset);
+        // scene.addGameObjectToScene(trigger);
+
         
-        // scene.save("physics2");
+        // for (int i = -9; i < 10; i++) {
+        //     scene.addGameObjectToScene(Prefabs.generateDemoBlock(i * 16f, 16f * -5f, 0, 16, BodyType.Static));
+        // }
+        // scene.addGameObjectToScene(Prefabs.generateDemoBlock(-9 * 16f, 16f * -4f, 0, 16, BodyType.Static));
+        // scene.addGameObjectToScene(Prefabs.generateDemoBlock(9 * 16f, 16f * -4f, 0, 16, BodyType.Static));
+        
+        // scene.addGameObjectToScene(Prefabs.Characters.generateSoldierDemo(0, 70, 1));
+
+        // GameObject soldier2 = Prefabs.Characters.generateSoldierDemo(120, 70, 0);
+        // soldier2.transform.scale.x = -1f;
+        // soldier2.removeComponent(PlayerController.class);
+        // scene.addGameObjectToScene(soldier2);
+
+        // GameObject soldier3 = Prefabs.Characters.generateSoldierDemo(-120, 70, 2);
+        // soldier3.removeComponent(PlayerController.class);
+        // scene.addGameObjectToScene(soldier3);
+
+
+        // scene.save("controller_test");
     }
 
     @Override
@@ -38,12 +62,20 @@ public class PhysTestLevelInitializer extends SceneInitializer{
         AssetPool.getTexture(Const.Img.WIZZARD_IDLE);
         AssetPool.getTexture(Const.Img.ROGUE_IDLE);
         AssetPool.getTexture(Const.Img.BOOK);
+        AssetPool.getTexture(Const.Img.GREEN_SOLDIER);
+        AssetPool.getTexture(Const.Img.BLUE_SOLDIER);
+        AssetPool.getTexture(Const.Img.RED_SOLDIER);
+
 
         // spritesheets
         AssetPool.addSpritesheet(Const.Img.DUNGEON_FLOOR_SPRITESHEET, new Spritesheet(AssetPool.getTexture(Const.Img.DUNGEON_FLOOR_SPRITESHEET), 16, 16, 59));
         AssetPool.addSpritesheet(Const.Img.KNIGHT_IDLE, new Spritesheet(AssetPool.getTexture(Const.Img.KNIGHT_IDLE), 32, 32, 4));
         AssetPool.addSpritesheet(Const.Img.ROGUE_IDLE, new Spritesheet(AssetPool.getTexture(Const.Img.ROGUE_IDLE), 32, 32, 4));
         AssetPool.addSpritesheet(Const.Img.WIZZARD_IDLE, new Spritesheet(AssetPool.getTexture(Const.Img.WIZZARD_IDLE), 32, 32, 4));
+        AssetPool.addSpritesheet(Const.Img.GREEN_SOLDIER, new Spritesheet(AssetPool.getTexture(Const.Img.GREEN_SOLDIER), 48, 48, 24));
+        AssetPool.addSpritesheet(Const.Img.BLUE_SOLDIER, new Spritesheet(AssetPool.getTexture(Const.Img.BLUE_SOLDIER), 48, 48, 24));
+        AssetPool.addSpritesheet(Const.Img.RED_SOLDIER, new Spritesheet(AssetPool.getTexture(Const.Img.RED_SOLDIER), 48, 48, 24));
+
 
         // sounds
         AssetPool.addSound(Const.Sound.WEAPON_SWING, false);
